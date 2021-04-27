@@ -1,0 +1,169 @@
+{
+  "name": "drupal-composer/drupal-project",
+  "description": "Project template for Drupal 8 projects with composer",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "",
+      "role": ""
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "NOTE": "This repository MUST be (re)declared in the ROOT composer.json",
+      "type": "package",
+      "package": {
+        "name": "syntaxhighlighter/syntaxhighlighter",
+        "description": "Fully functional self-contained code syntax highlighter developed in JavaScript.",
+        "type": "drupal-library",
+        "homepage": "https://github.com/syntaxhighlighter/syntaxhighlighter",
+        "version": "master",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/syntaxhighlighter/SyntaxHighlighter-Site/raw/master/content/SyntaxHighlighter/download/syntaxhighlighter_3.0.83.zip",
+          "reference": "master"
+        },
+        "autoload": {
+          "classmap": ["."]
+        }
+      }
+    },
+    {
+      "NOTE": "This repository MUST be (re)declared in the ROOT composer.json",
+      "type": "package",
+      "package": {
+        "name": "ckeditor_syntaxhighligh/ckeditor_syntaxhighlight",
+        "description": "CKEditor plugin which enables code syntax highlighting. Interface for Alex Gorbatchev's syntaxhighlighter.",
+        "type": "drupal-library",
+        "homepage": "http://ckeditor.com/addon/syntaxhighlight",
+        "version": "master",
+        "dist": {
+          "type": "zip",
+          "url": "https://codeload.github.com/dbrain/ckeditor-syntaxhighlight/zip/ckeditor-4",
+          "reference": "master"
+        },
+        "autoload": {
+          "classmap": ["."]
+        }
+      }
+    }
+  ],
+  "require": {
+    "ckeditor_syntaxhighligh/ckeditor_syntaxhighlight": "master",
+    "composer/installers": "^1.9",
+    "cweagans/composer-patches": "^1.7",
+    "drupal/admin_toolbar": "^2",
+    "drupal/antibot": "^1.2",
+    "drupal/captcha": "^1.0@beta",
+    "drupal/ckeditor_syntaxhighlighter": "^1.0@alpha",
+    "drupal/config_split": "^1.4",
+    "drupal/console": "^1.9.7",
+    "drupal/contact_storage": "^1.0@beta",
+    "drupal/content_translation_redirect": "^1.2",
+    "drupal/core-composer-scaffold": "^9.1",
+    "drupal/core-recommended": "^8.9.13",
+    "drupal/dea_blocker": "^1.0",
+    "drupal/did_this_help": "^2.0",
+    "drupal/disqus": "^1.0@RC",
+    "drupal/easy_breadcrumb": "^1.12",
+    "drupal/eu_cookie_compliance": "^1.8",
+    "drupal/extlink": "^1.1",
+    "drupal/field_group": "^3.0",
+    "drupal/google_analytics": "^3.0",
+    "drupal/hreflang": "^1.1",
+    "drupal/imageapi_optimize": "^2.0@alpha",
+    "drupal/imageapi_optimize_resmushit": "^1.0@beta",
+    "drupal/lang_dropdown": "^2.0@beta",
+    "drupal/like_and_dislike": "^1.0@beta",
+    "drupal/linkit": "^4.3",
+    "drupal/metatag": "^1.9",
+    "drupal/paragraphs": "^1.2",
+    "drupal/pathauto": "^1.1",
+    "drupal/realname": "^1.0@RC",
+    "drupal/recaptcha": "^2.4",
+    "drupal/redirect": "^1.1",
+    "drupal/responsive_favicons": "^1.4",
+    "drupal/simple_sitemap": "^3.3",
+    "drupal/swiftmailer": "^2.0",
+    "drupal/syntaxhighlighter": "^1.0@alpha",
+    "drupal/twig_tweak": "^2.9",
+    "drupal/upgrade_status": "^3.4",
+    "drupal/yoast_seo": "^1.5",
+    "drush/drush": "^9.2",
+    "vlucas/phpdotenv": "^2.4",
+    "webflo/drupal-finder": "^1.0.0",
+    "webmozart/path-util": "^2.3"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ],
+    "files": [
+      "load.environment.php"
+    ]
+  },
+  "scripts": {
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "pre-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "pre-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/contrib/{$name}": [
+        "type:drupal-drush"
+      ]
+    },
+    "patches": {
+      "drupal/core": {
+        "Dependency on config storage causes circular reference in service container": "https://www.drupal.org/files/issues/2019-12-31/syslog.module-settings-storage-3103620-5.patch",
+        "Make Book navigation translatable": "https://www.drupal.org/files/issues/2020-12-15/2470896_233.patch"
+      }
+    },
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    }
+  },
+  "require-dev": {
+    "drupal/core-dev": "8.9.13"
+  }
+}

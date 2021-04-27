@@ -1,0 +1,17 @@
+enabled_languages:
+  - shBrushBash.js
+  - shBrushCss.js
+  - shBrushJScript.js
+  - shBrushPhp.js
+  - shBrushPlain.js
+  - shBrushSass.js
+  - shBrushXml.js
+use_autoloader: false
+theme: shThemeDefault.css
+tagname: pre
+legacy_mode: 0
+inject: 0
+pages: "admin\r\nadmin/*\r\nuser\r\nuser/*\r\nimce\r\nimce/*\r\n"
+default_expressions: ''
+_core:
+  default_config_hash: bPsyyoEYlxJFVjjaSRnQYdycQZeS-gS6ehOKnzDsBLA

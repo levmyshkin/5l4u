@@ -1,0 +1,20 @@
+.authors-drupal-org {
+  margin-bottom: 20px;
+  .docs-author {
+    &:after {
+      content: ', ';
+      display: inline-block;
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+  }
+}
+
+.source-docs {
+  margin-bottom: 20px;
+}
+

@@ -1,0 +1,223 @@
+uuid: 58b20001-9d64-46d3-b0e7-e2cc8c89bd21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - field.field.node.article.field_article_type
+    - field.field.node.article.field_attachments
+    - field.field.node.article.field_disqus
+    - field.field.node.article.field_hero_image
+    - field.field.node.article.field_image
+    - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_yoast_seo
+    - node.type.article
+  module:
+    - disqus
+    - field_layout
+    - file
+    - layout_builder
+    - layout_discovery
+    - metatag
+    - text
+    - user
+    - yoast_seo
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          4c4f83c5-3f3c-44d2-9c55-61ab8a1d59b3:
+            uuid: 4c4f83c5-3f3c-44d2-9c55-61ab8a1d59b3
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:article:like_and_dislike'
+            additional: {  }
+            weight: 0
+          d7f79285-0d50-4a7f-8e89-71a9f517d5ec:
+            uuid: d7f79285-0d50-4a7f-8e89-71a9f517d5ec
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:article:body'
+              formatter:
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+                label: hidden
+            additional: {  }
+            weight: 1
+          09ea8d44-39a3-4559-8d37-c8baeb50d157:
+            uuid: 09ea8d44-39a3-4559-8d37-c8baeb50d157
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:article:field_tags'
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          53342d80-f85d-4cd5-8d88-a7e119148632:
+            uuid: 53342d80-f85d-4cd5-8d88-a7e119148632
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:article:links'
+            additional: {  }
+            weight: 3
+          a15309e7-12c2-4cb1-8222-737520c5ff6f:
+            uuid: a15309e7-12c2-4cb1-8222-737520c5ff6f
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:article:field_meta_tags'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: metatag_empty_formatter
+            additional: {  }
+            weight: 4
+          75514de2-2477-4223-a480-0577dcd6c929:
+            uuid: 75514de2-2477-4223-a480-0577dcd6c929
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:article:field_disqus'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: disqus_comment
+            additional: {  }
+            weight: 5
+          aaeadcc1-4735-4bd3-98c1-9a93c78a9603:
+            uuid: aaeadcc1-4735-4bd3-98c1-9a93c78a9603
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:article:field_yoast_seo'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: yoastseo_formatter
+            additional: {  }
+            weight: 6
+          130e55f9-4064-40f4-b372-947580a9bfc4:
+            uuid: 130e55f9-4064-40f4-b372-947580a9bfc4
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:article:field_attachments'
+              formatter:
+                label: above
+                settings:
+                  use_description_as_link_text: true
+                third_party_settings: {  }
+                type: file_default
+            additional: {  }
+            weight: 7
+        third_party_settings: {  }
+    allow_custom: false
+_core:
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.default
+targetEntityType: node
+bundle: article
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+  field_attachments:
+    weight: 7
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_disqus:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: disqus_comment
+    region: content
+  field_meta_tags:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_tags:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_yoast_seo:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: yoastseo_formatter
+    region: content
+  like_and_dislike:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  likeit:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_article_type: true
+  field_hero_image: true
+  field_image: true
+  langcode: true

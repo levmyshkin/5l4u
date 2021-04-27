@@ -1,0 +1,31 @@
+uuid: 5fa9fb47-98c8-4f97-a4c5-19a0bb1a9f58
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2e8b2e35-7dbc-41de-8cfa-852a63dbd5d0'
+  module:
+    - block_content
+    - system
+  theme:
+    - editorial_html5_up
+id: textblock
+theme: editorial_html5_up
+region: content
+weight: -7
+provider: null
+plugin: 'block_content:2e8b2e35-7dbc-41de-8cfa-852a63dbd5d0'
+settings:
+  id: 'block_content:2e8b2e35-7dbc-41de-8cfa-852a63dbd5d0'
+  label: 'Column text block '
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/contact\r\n/contact/feedback"
+    negate: false
+    context_mapping: {  }

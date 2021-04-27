@@ -1,0 +1,27 @@
+uuid: 34c8075d-bdfd-49df-a211-4951133c2d61
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - editorial_html5_up
+_core:
+  default_config_hash: X5fFGmZTJ5x85XbhgdmnUi43ZG1sV2CAtnqT_x0E3eg
+id: editorial_html5_up_main_menu
+theme: editorial_html5_up
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

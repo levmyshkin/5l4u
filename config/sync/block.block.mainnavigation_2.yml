@@ -1,0 +1,25 @@
+uuid: 81bd176e-09e0-4c58-b97e-dc54a5d5ecca
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - editorial_html5_up
+id: mainnavigation_2
+theme: editorial_html5_up
+region: top_content
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

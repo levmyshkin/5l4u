@@ -1,0 +1,27 @@
+uuid: be5c5475-5973-4e13-8ea2-ec5ebeae1e2a
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachments
+    - node.type.article
+  module:
+    - file
+id: node.article.field_attachments
+field_name: field_attachments
+entity_type: node
+bundle: article
+label: 'Прикрепленные файлы'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf doc docx zip rar tar tgz xls xlsx txt'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

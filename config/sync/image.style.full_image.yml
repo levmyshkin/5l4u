@@ -1,0 +1,8 @@
+uuid: d0b1c628-7076-41ac-ab35-71b1ab8d2c54
+langcode: en
+status: true
+dependencies: {  }
+name: full_image
+label: 'Full image'
+effects: {  }
+pipeline: resmush_it

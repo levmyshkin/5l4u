@@ -1,0 +1,19 @@
+uuid: 2d64b6c4-3bea-46f3-b64e-2346f49541db
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drupal_org_authors
+    - node.type.book
+id: node.book.field_drupal_org_authors
+field_name: field_drupal_org_authors
+entity_type: node
+bundle: book
+label: 'Drupal.org authors'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

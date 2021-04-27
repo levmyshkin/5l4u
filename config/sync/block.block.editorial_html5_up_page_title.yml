@@ -1,0 +1,20 @@
+uuid: 3c67356b-5cd6-41c5-8e1a-119242246f0b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - editorial_html5_up
+_core:
+  default_config_hash: xbhI_fVNUQrQbVGPtLh97ciE3vqx7h2FsOqhUisYduE
+id: editorial_html5_up_page_title
+theme: editorial_html5_up
+region: hero_image
+weight: -9
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

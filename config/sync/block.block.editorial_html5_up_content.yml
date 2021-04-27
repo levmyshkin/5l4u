@@ -1,0 +1,22 @@
+uuid: afabb78d-7d04-4cbe-aa3d-5f134b43d454
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - editorial_html5_up
+_core:
+  default_config_hash: b4ArTA86tRoVpESZzLQn_GFQYUNazDsuIpm5S9_e8bs
+id: editorial_html5_up_content
+theme: editorial_html5_up
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

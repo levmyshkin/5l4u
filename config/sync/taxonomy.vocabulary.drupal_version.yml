@@ -1,0 +1,8 @@
+uuid: ddccb8c7-3775-4125-94e7-f65137b2d279
+langcode: und
+status: true
+dependencies: {  }
+name: 'Drupal version'
+vid: drupal_version
+description: 'Use these tags to indicate the core version'
+weight: 0

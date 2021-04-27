@@ -1,0 +1,33 @@
+uuid: 9d903e59-1f3d-47a5-a266-d1fde445b58b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Аутентифицированный пользователь'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'add or remove dislike votes on article of node'
+  - 'add or remove dislike votes on book of node'
+  - 'add or remove dislike votes on faq of node'
+  - 'add or remove like votes on article of node'
+  - 'add or remove like votes on book of node'
+  - 'add or remove like votes on faq of node'
+  - 'add or remove vote votes on article of node'
+  - 'add or remove vote votes on book of node'
+  - 'add or remove vote votes on faq of node'
+  - 'display eu cookie compliance popup'
+  - likeit_like
+  - likeit_view
+  - 'opt-in or out of google analytics tracking'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view disqus comments'

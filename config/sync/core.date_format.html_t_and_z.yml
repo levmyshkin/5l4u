@@ -1,0 +1,8 @@
+uuid: 21e99eaf-eda1-42f6-b9e6-121de13fba18
+langcode: und
+status: true
+dependencies: {  }
+id: html_t_and_z
+label: 'HTML T and Z'
+locked: false
+pattern: 'Y-m-d\TH:i:s\Z'

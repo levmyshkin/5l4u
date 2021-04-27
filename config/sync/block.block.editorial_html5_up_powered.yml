@@ -1,0 +1,22 @@
+uuid: 0a90b552-029d-42b3-b111-22111fbfbe05
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - editorial_html5_up
+_core:
+  default_config_hash: u_fVbxRA_V5KZulefKaLWvSWwTPUQp3sk86EeceEUIc
+id: editorial_html5_up_powered
+theme: editorial_html5_up
+region: sidebar_first
+weight: -1
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

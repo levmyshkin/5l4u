@@ -1,0 +1,14 @@
+uuid: 73e2afdd-805d-4911-a226-22eb162ef4ae
+langcode: ru
+status: true
+dependencies:
+  config:
+    - user.role.editor
+  module:
+    - user
+id: user_remove_role_action.editor
+label: 'Remove the ditor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editor

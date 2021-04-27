@@ -1,0 +1,27 @@
+uuid: 42d44e8b-669d-42c2-9395-e2c744392c0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - editorial_html5_up
+_core:
+  default_config_hash: 3W49KSnVdutwBs-Mf73onl62t061QJ4_F6uRJe34oa4
+id: editorial_html5_up_footer
+theme: editorial_html5_up
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

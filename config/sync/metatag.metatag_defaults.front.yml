@@ -1,0 +1,12 @@
+uuid: eb6e7625-7cf8-4773-93f7-773f30247053
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  description: 'This is DrupalBook, another one manual for Drupal development. I decided to write this manual, because many other books and sites about Drupal are too complicated for understanding.'
+  canonical_url: '[site:url]'
+  shortlink: '[site:url]'

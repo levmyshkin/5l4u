@@ -1,0 +1,23 @@
+uuid: 02982f67-93b7-46b0-8144-a2a2e6012582
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - editorial_html5_up
+_core:
+  default_config_hash: SbTZK3YFIYtKEXDmRcVPgP9THGciPG4cOwSh62odWv8
+id: editorial_html5_up_search
+theme: editorial_html5_up
+region: sidebar_first
+weight: -9
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+  page_id: ''
+visibility: {  }
