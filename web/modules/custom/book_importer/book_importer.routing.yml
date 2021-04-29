@@ -1,0 +1,7 @@
+book_importer.settings:
+  path: '/admin/content/import-csv'
+  defaults:
+    _form: '\Drupal\book_importer\Form\ImportCsvForm'
+    _title: 'Import CSV file'
+  requirements:
+    _permission: 'import csv files'

@@ -18,33 +18,14 @@
       "NOTE": "This repository MUST be (re)declared in the ROOT composer.json",
       "type": "package",
       "package": {
-        "name": "syntaxhighlighter/syntaxhighlighter",
-        "description": "Fully functional self-contained code syntax highlighter developed in JavaScript.",
+        "name": "jsmodules/ddslick",
+        "description": "A free light weight jQuery plugin that allows you to create a custom drop down with images and description.",
         "type": "drupal-library",
-        "homepage": "https://github.com/syntaxhighlighter/syntaxhighlighter",
+        "homepage": "https://github.com/jsmodules/ddslick",
         "version": "master",
         "dist": {
           "type": "zip",
-          "url": "https://github.com/syntaxhighlighter/SyntaxHighlighter-Site/raw/master/content/SyntaxHighlighter/download/syntaxhighlighter_3.0.83.zip",
-          "reference": "master"
-        },
-        "autoload": {
-          "classmap": ["."]
-        }
-      }
-    },
-    {
-      "NOTE": "This repository MUST be (re)declared in the ROOT composer.json",
-      "type": "package",
-      "package": {
-        "name": "ckeditor_syntaxhighligh/ckeditor_syntaxhighlight",
-        "description": "CKEditor plugin which enables code syntax highlighting. Interface for Alex Gorbatchev's syntaxhighlighter.",
-        "type": "drupal-library",
-        "homepage": "http://ckeditor.com/addon/syntaxhighlight",
-        "version": "master",
-        "dist": {
-          "type": "zip",
-          "url": "https://codeload.github.com/dbrain/ckeditor-syntaxhighlight/zip/ckeditor-4",
+          "url": "https://github.com/jsmodules/ddslick/archive/refs/heads/master.zip",
           "reference": "master"
         },
         "autoload": {
@@ -54,13 +35,11 @@
     }
   ],
   "require": {
-    "ckeditor_syntaxhighligh/ckeditor_syntaxhighlight": "master",
     "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.7",
     "drupal/admin_toolbar": "^2",
     "drupal/antibot": "^1.2",
     "drupal/captcha": "^1.0@beta",
-    "drupal/ckeditor_syntaxhighlighter": "^1.0@alpha",
     "drupal/config_split": "^1.4",
     "drupal/console": "^1.9.7",
     "drupal/contact_storage": "^1.0@beta",
@@ -79,7 +58,8 @@
     "drupal/imageapi_optimize": "^2.0@alpha",
     "drupal/imageapi_optimize_resmushit": "^1.0@beta",
     "drupal/lang_dropdown": "^2.0@beta",
-    "drupal/like_and_dislike": "^1.0@beta",
+    "drupal/languageicons": "^1.0@beta",
+    "drupal/libraries": "^3.0@beta",
     "drupal/linkit": "^4.3",
     "drupal/metatag": "^1.9",
     "drupal/paragraphs": "^1.2",
@@ -90,11 +70,12 @@
     "drupal/responsive_favicons": "^1.4",
     "drupal/simple_sitemap": "^3.3",
     "drupal/swiftmailer": "^2.0",
-    "drupal/syntaxhighlighter": "^1.0@alpha",
     "drupal/twig_tweak": "^2.9",
     "drupal/upgrade_status": "^3.4",
     "drupal/yoast_seo": "^1.5",
     "drush/drush": "^9.2",
+    "jsmodules/ddslick": "master",
+    "marghoobsuleman/ms-Dropdown": "master",
     "vlucas/phpdotenv": "^2.4",
     "webflo/drupal-finder": "^1.0.0",
     "webmozart/path-util": "^2.3"

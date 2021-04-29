@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "053fa95f6b4a6e1b2cf26d43323834f8",
+    "content-hash": "0484d0a316c8fa60587a2857d034ec78",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -170,23 +170,6 @@
             ],
             "description": "Drupal code generator",
             "time": "2020-07-15T06:08:04+00:00"
-        },
-        {
-            "name": "ckeditor_syntaxhighligh/ckeditor_syntaxhighlight",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://codeload.github.com/dbrain/ckeditor-syntaxhighlight/zip/ckeditor-4",
-                "reference": "master"
-            },
-            "type": "drupal-library",
-            "autoload": {
-                "classmap": [
-                    "."
-                ]
-            },
-            "description": "CKEditor plugin which enables code syntax highlighting. Interface for Alex Gorbatchev's syntaxhighlighter.",
-            "homepage": "http://ckeditor.com/addon/syntaxhighlight"
         },
         {
             "name": "composer/installers",
@@ -2081,58 +2064,6 @@
             }
         },
         {
-            "name": "drupal/ckeditor_syntaxhighlighter",
-            "version": "1.0.0-alpha1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor_syntaxhighlighter.git",
-                "reference": "8.x-1.0-alpha1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_syntaxhighlighter-8.x-1.0-alpha1.zip",
-                "reference": "8.x-1.0-alpha1",
-                "shasum": "2d2c1b604053f6e7a1de5b86f4f838241ef95a28"
-            },
-            "require": {
-                "ckeditor_syntaxhighligh/ckeditor_syntaxhighlight": "master",
-                "drupal/core": "^8",
-                "drupal/libraries": "*",
-                "drupal/syntaxhighlighter": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-alpha1",
-                    "datestamp": "1511860985",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Antonio Ospite",
-                    "homepage": "https://www.drupal.org/u/ao2"
-                },
-                {
-                    "name": "duckzland",
-                    "homepage": "https://www.drupal.org/user/492890"
-                }
-            ],
-            "description": "Syntax Highlighter integration into CKEditor.",
-            "homepage": "http://drupal.org/project/ckeditor_syntaxhighlighter",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor_syntaxhighlighter",
-                "issues": "https://www.drupal.org/project/issues/ckeditor_syntaxhighlighter"
-            }
-        },
-        {
             "name": "drupal/config_filter",
             "version": "1.8.0",
             "source": {
@@ -3885,6 +3816,54 @@
             }
         },
         {
+            "name": "drupal/languageicons",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/languageicons.git",
+                "reference": "8.x-1.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/languageicons-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "1b2ffa57dabfc7717d5474c7066a43e8fcdfa28a"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1609835079",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Freso",
+                    "homepage": "https://www.drupal.org/user/27504"
+                },
+                {
+                    "name": "pfrenssen",
+                    "homepage": "https://www.drupal.org/user/382067"
+                }
+            ],
+            "description": "Adds icons to language links.",
+            "homepage": "https://www.drupal.org/project/languageicons",
+            "support": {
+                "source": "https://git.drupalcode.org/project/languageicons"
+            }
+        },
+        {
             "name": "drupal/libraries",
             "version": "3.0.0-beta1",
             "source": {
@@ -3948,70 +3927,6 @@
                 "source": "http://cgit.drupalcode.org/libraries",
                 "issues": "http://drupal.org/project/issues/libraries",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/like_and_dislike",
-            "version": "1.0.0-beta2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/like_and_dislike.git",
-                "reference": "8.x-1.0-beta2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/like_and_dislike-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "ea6bf35c0d0980d6410a72df703880f56e1cd48b"
-            },
-            "require": {
-                "drupal/core": "^8.7.7 || ^9.0",
-                "drupal/votingapi": "^3.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1608659080",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Adrian Cid Almaguer (adriancid)",
-                    "homepage": "https://www.drupal.org/u/adriancid",
-                    "email": "adriancid@gmail.com",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Sascha Grossenbacher (Berdir)",
-                    "homepage": "https://www.drupal.org/u/berdir",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Pedro Rocha (pedrorocha)",
-                    "homepage": "https://www.drupal.org/u/pedrorocha",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Enable like and dislike widgets and statistics",
-            "homepage": "https://drupal.org/project/like_and_dislike",
-            "keywords": [
-                "Dislike",
-                "Drupal",
-                "Like",
-                "Votes"
-            ],
-            "support": {
-                "source": "https://cgit.drupalcode.org/like_and_dislike",
-                "issues": "https://drupal.org/project/issues/like_and_dislike"
             }
         },
         {
@@ -4713,65 +4628,6 @@
             }
         },
         {
-            "name": "drupal/syntaxhighlighter",
-            "version": "1.0.0-alpha2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/syntaxhighlighter.git",
-                "reference": "8.x-1.0-alpha2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/syntaxhighlighter-8.x-1.0-alpha2.zip",
-                "reference": "8.x-1.0-alpha2",
-                "shasum": "8fcef04dd888f8d7eee5fd76cd2c8576bc8c4d4b"
-            },
-            "require": {
-                "drupal/core": "~8.0",
-                "drupal/libraries": "*",
-                "syntaxhighlighter/syntaxhighlighter": "dev-master"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-alpha2",
-                    "datestamp": "1511870286",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Antonio Ospite",
-                    "homepage": "https://www.drupal.org/u/ao2"
-                },
-                {
-                    "name": "fizk",
-                    "homepage": "https://www.drupal.org/user/473174"
-                },
-                {
-                    "name": "mattyoung",
-                    "homepage": "https://www.drupal.org/user/11944"
-                },
-                {
-                    "name": "mrfelton",
-                    "homepage": "https://www.drupal.org/user/305669"
-                }
-            ],
-            "description": "Highlight source code using the SyntaxHighlighter Javascript library.",
-            "homepage": "http://drupal.org/project/syntaxhighlighter",
-            "support": {
-                "source": "https://git.drupalcode.org/project/syntaxhighlighter",
-                "issues": "https://www.drupal.org/project/issues/syntaxhighlighter"
-            }
-        },
-        {
             "name": "drupal/token",
             "version": "1.9.0",
             "source": {
@@ -4965,69 +4821,6 @@
             "homepage": "http://drupal.org/project/upgrade_status",
             "support": {
                 "source": "https://git.drupalcode.org/project/upgrade_status"
-            }
-        },
-        {
-            "name": "drupal/votingapi",
-            "version": "3.0.0-beta2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/votingapi.git",
-                "reference": "8.x-3.0-beta2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/votingapi-8.x-3.0-beta2.zip",
-                "reference": "8.x-3.0-beta2",
-                "shasum": "1fe15da49cc1f2126f29ae39349a199eb1360a32"
-            },
-            "require": {
-                "drupal/core": "^8.7.7 || ^9"
-            },
-            "require-dev": {
-                "drupal/token": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-3.0-beta2",
-                    "datestamp": "1591656113",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "eaton",
-                    "homepage": "https://www.drupal.org/user/16496"
-                },
-                {
-                    "name": "pedrorocha",
-                    "homepage": "https://www.drupal.org/user/218937"
-                },
-                {
-                    "name": "pifagor",
-                    "homepage": "https://www.drupal.org/user/2375692"
-                },
-                {
-                    "name": "torotil",
-                    "homepage": "https://www.drupal.org/user/865256"
-                }
-            ],
-            "description": "Voting API",
-            "homepage": "http://drupal.org/project/votingapi",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/votingapi",
-                "issues": "http://drupal.org/project/issues/votingapi"
             }
         },
         {
@@ -5686,6 +5479,23 @@
             "time": "2020-04-16T23:44:31+00:00"
         },
         {
+            "name": "jsmodules/ddslick",
+            "version": "master",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/jsmodules/ddslick/archive/refs/heads/master.zip",
+                "reference": "master"
+            },
+            "type": "drupal-library",
+            "autoload": {
+                "classmap": [
+                    "."
+                ]
+            },
+            "description": "A free light weight jQuery plugin that allows you to create a custom drop down with images and description.",
+            "homepage": "https://github.com/jsmodules/ddslick"
+        },
+        {
             "name": "laminas/laminas-diactoros",
             "version": "1.8.7p2",
             "source": {
@@ -6201,6 +6011,23 @@
                 }
             ],
             "time": "2021-02-22T09:20:06+00:00"
+        },
+        {
+            "name": "marghoobsuleman/ms-Dropdown",
+            "version": "master",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/marghoobsuleman/ms-Dropdown/archive/refs/heads/master.zip",
+                "reference": "master"
+            },
+            "type": "drupal-library",
+            "autoload": {
+                "classmap": [
+                    "."
+                ]
+            },
+            "description": "Fully functional self-contained code syntax highlighter developed in JavaScript.",
+            "homepage": "https://github.com/marghoobsuleman/ms-Dropdown"
         },
         {
             "name": "masterminds/html5",
@@ -9403,23 +9230,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2020-05-11T07:51:54+00:00"
-        },
-        {
-            "name": "syntaxhighlighter/syntaxhighlighter",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/syntaxhighlighter/SyntaxHighlighter-Site/raw/master/content/SyntaxHighlighter/download/syntaxhighlighter_3.0.83.zip",
-                "reference": "master"
-            },
-            "type": "drupal-library",
-            "autoload": {
-                "classmap": [
-                    "."
-                ]
-            },
-            "description": "Fully functional self-contained code syntax highlighter developed in JavaScript.",
-            "homepage": "https://github.com/syntaxhighlighter/syntaxhighlighter"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -12837,15 +12647,14 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/captcha": 10,
-        "drupal/ckeditor_syntaxhighlighter": 15,
         "drupal/contact_storage": 10,
         "drupal/disqus": 5,
         "drupal/imageapi_optimize": 15,
         "drupal/imageapi_optimize_resmushit": 10,
         "drupal/lang_dropdown": 10,
-        "drupal/like_and_dislike": 10,
-        "drupal/realname": 5,
-        "drupal/syntaxhighlighter": 15
+        "drupal/languageicons": 10,
+        "drupal/libraries": 10,
+        "drupal/realname": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
