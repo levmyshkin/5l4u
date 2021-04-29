@@ -74,8 +74,6 @@
     "drupal/upgrade_status": "^3.4",
     "drupal/yoast_seo": "^1.5",
     "drush/drush": "^9.2",
-    "jsmodules/ddslick": "master",
-    "marghoobsuleman/ms-Dropdown": "master",
     "vlucas/phpdotenv": "^2.4",
     "webflo/drupal-finder": "^1.0.0",
     "webmozart/path-util": "^2.3"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0484d0a316c8fa60587a2857d034ec78",
+    "content-hash": "a730e9671bab7e40fa39cf2687f16242",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5479,23 +5479,6 @@
             "time": "2020-04-16T23:44:31+00:00"
         },
         {
-            "name": "jsmodules/ddslick",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/jsmodules/ddslick/archive/refs/heads/master.zip",
-                "reference": "master"
-            },
-            "type": "drupal-library",
-            "autoload": {
-                "classmap": [
-                    "."
-                ]
-            },
-            "description": "A free light weight jQuery plugin that allows you to create a custom drop down with images and description.",
-            "homepage": "https://github.com/jsmodules/ddslick"
-        },
-        {
             "name": "laminas/laminas-diactoros",
             "version": "1.8.7p2",
             "source": {
@@ -6011,23 +5994,6 @@
                 }
             ],
             "time": "2021-02-22T09:20:06+00:00"
-        },
-        {
-            "name": "marghoobsuleman/ms-Dropdown",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/marghoobsuleman/ms-Dropdown/archive/refs/heads/master.zip",
-                "reference": "master"
-            },
-            "type": "drupal-library",
-            "autoload": {
-                "classmap": [
-                    "."
-                ]
-            },
-            "description": "Fully functional self-contained code syntax highlighter developed in JavaScript.",
-            "homepage": "https://github.com/marghoobsuleman/ms-Dropdown"
         },
         {
             "name": "masterminds/html5",
