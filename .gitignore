@@ -35,3 +35,4 @@ node_modules
 *.sql
 /.editorconfig
 /.gitattributes
+*.css.map
