@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_type
-    - field.field.node.article.field_attachments
-    - field.field.node.article.field_disqus
     - field.field.node.article.field_hero_image
     - field.field.node.article.field_image
     - field.field.node.article.field_meta_tags
@@ -14,9 +12,7 @@ dependencies:
     - field.field.node.article.field_yoast_seo
     - node.type.article
   module:
-    - disqus
     - field_layout
-    - file
     - layout_builder
     - layout_discovery
     - metatag
@@ -102,21 +98,6 @@ third_party_settings:
                 type: metatag_empty_formatter
             additional: {  }
             weight: 4
-          75514de2-2477-4223-a480-0577dcd6c929:
-            uuid: 75514de2-2477-4223-a480-0577dcd6c929
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:article:field_disqus'
-              formatter:
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-                type: disqus_comment
-            additional: {  }
-            weight: 5
           aaeadcc1-4735-4bd3-98c1-9a93c78a9603:
             uuid: aaeadcc1-4735-4bd3-98c1-9a93c78a9603
             region: content
@@ -132,22 +113,6 @@ third_party_settings:
                 type: yoastseo_formatter
             additional: {  }
             weight: 6
-          130e55f9-4064-40f4-b372-947580a9bfc4:
-            uuid: 130e55f9-4064-40f4-b372-947580a9bfc4
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:article:field_attachments'
-              formatter:
-                label: above
-                settings:
-                  use_description_as_link_text: true
-                third_party_settings: {  }
-                type: file_default
-            additional: {  }
-            weight: 7
         third_party_settings: {  }
     allow_custom: false
 _core:
@@ -164,21 +129,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     label: hidden
-  field_attachments:
-    weight: 7
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_disqus:
-    weight: 5
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: disqus_comment
-    region: content
   field_meta_tags:
     weight: 4
     label: above

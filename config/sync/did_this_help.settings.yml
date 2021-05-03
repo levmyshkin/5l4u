@@ -1,4 +1,0 @@
-question: 'Did this help?'
-no_answers: "Too much information\r\nNot enough information to answer my question\r\nThis isn't what I was looking for\r\nI tried this and it didn't solve the problem\r\nI don't like this feature or policy"
-_core:
-  default_config_hash: zCYsxaV4FWVUaFzrKQ3Fib6PlEaBwTRBGtZO3fbY3yE

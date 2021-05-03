@@ -1,14 +1,13 @@
 module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
-  antibot: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
   block_content: 0
   book: 0
+  book_importer: 0
   breakpoint: 0
-  captcha: 0
   ckeditor: 0
   color: 0
   config: 0
@@ -20,9 +19,7 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
-  dea_blocker: 0
   did_this_help: 0
-  disqus: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -41,6 +38,7 @@ module:
   imageapi_optimize: 0
   imageapi_optimize_resmushit: 0
   language: 0
+  languageicons: 0
   layout_builder: 0
   layout_discovery: 0
   libraries: 0
@@ -58,8 +56,6 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
-  realname: 0
-  recaptcha: 0
   redirect: 0
   redirect_404: 0
   responsive_favicons: 0
@@ -67,10 +63,11 @@ module:
   search: 0
   shortcut: 0
   simple_sitemap: 0
+  superfish: 0
   swiftmailer: 0
-  syntaxhighlighter: 0
   system: 0
   taxonomy: 0
+  taxonomy_menu: 0
   text: 0
   token: 0
   toolbar: 0
@@ -84,7 +81,6 @@ module:
   pathauto: 1
   content_translation: 10
   views: 10
-  paragraphs: 11
   standard: 1000
 theme:
   stable: 0

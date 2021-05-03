@@ -11,7 +11,7 @@ _core:
 id: editorial_html5_up_search
 theme: editorial_html5_up
 region: sidebar_first
-weight: -9
+weight: -6
 provider: null
 plugin: search_form_block
 settings:

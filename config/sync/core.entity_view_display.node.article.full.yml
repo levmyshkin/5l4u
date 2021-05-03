@@ -6,8 +6,6 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.article.body
     - field.field.node.article.field_article_type
-    - field.field.node.article.field_attachments
-    - field.field.node.article.field_disqus
     - field.field.node.article.field_hero_image
     - field.field.node.article.field_image
     - field.field.node.article.field_meta_tags
@@ -15,9 +13,7 @@ dependencies:
     - field.field.node.article.field_yoast_seo
     - node.type.article
   module:
-    - disqus
     - field_layout
-    - file
     - layout_builder
     - metatag
     - text
@@ -44,21 +40,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     label: hidden
-  field_attachments:
-    weight: 2
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_disqus:
-    weight: 6
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: disqus_comment
-    region: content
   field_meta_tags:
     weight: 5
     label: above

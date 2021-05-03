@@ -718,7 +718,7 @@ input[type="radio"] + label:before {
 /* custom */
 .search-block-form {
   background-color: #eff1f2;
-  margin: -22px -22px 45px -22px;
+  margin: -22px -22px 20px -22px;
   padding: 22px; }
   .search-block-form form {
     text-decoration: none;
@@ -1121,17 +1121,6 @@ a.image {
     width: 50px;
     margin-right: 10px;
     border-bottom: 0; }
-  .top_content .navbar-nav {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    margin-bottom: 0; }
-    .top_content .navbar-nav a {
-      text-transform: uppercase;
-      border-bottom: none;
-      padding: 10px;
-      color: #000; }
 
 .region-top-content {
   display: -webkit-box;
@@ -1467,12 +1456,18 @@ a.image {
         -webkit-transform: rotate(-180deg);
         transform: rotate(-180deg); }
 
-.navbar-nav {
-  margin-bottom: 30px; }
+.region-sidebar-first ul.sf-menu a {
+  padding: 10px 0; }
 
-.book-navigation .menu {
-  list-style: disc;
-  padding-left: 10px; }
+.region-sidebar-first ul.sf-menu .sf-sub-indicator {
+  height: 17px;
+  width: 17px; }
+
+.region-sidebar-first ul.sf-menu ul a {
+  padding: 10px;
+  background: #fff; }
+  .region-sidebar-first ul.sf-menu ul a:hover {
+    background: #ddd; }
 
 #block-editorial-html5-up-booknavigation {
   margin-bottom: 30px; }
@@ -1480,9 +1475,16 @@ a.image {
 .menu--footer {
   display: block; }
 
-.language-switcher-language-url .links li {
-  display: inline-block;
-  margin-right: 10px; }
+.language-switcher-language-url {
+  margin-bottom: 10px; }
+  .language-switcher-language-url .links li {
+    display: inline-block;
+    margin-right: 10px; }
+    .language-switcher-language-url .links li img {
+      height: 24px;
+      border: 1px solid #ddd;
+      -o-object-fit: cover;
+         object-fit: cover; }
 
 #block-drupalarticles .menu ul {
   padding: 0 0 0 7px;

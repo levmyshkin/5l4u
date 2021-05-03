@@ -1,0 +1,16 @@
+uuid: 1555f6c7-b179-4f64-9ad2-ce5b64294797
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - taxonomy.vocabulary.tags
+id: tags
+label: Tags
+vocabulary: tags
+menu: main
+expanded: true
+depth: 2
+menu_parent: 'main:'
+description_field_name: ''
+use_term_weight_order: true

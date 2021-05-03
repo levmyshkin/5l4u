@@ -1,11 +1,11 @@
 uuid: 34bbbe0d-c980-4335-a003-a7ba653cf26c
-name: 'Drupal Book'
+name: 'Easy Lifehacks'
 mail: levmyshkin89@gmail.com
 slogan: ''
 page:
   403: /node/1640
   404: /node/1641
-  front: /node/1639
+  front: /node
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

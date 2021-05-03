@@ -78,16 +78,26 @@
       }
     }
   }
-}
 
-.navbar-nav {
-  margin-bottom: 30px;
-}
+  ul.sf-menu {
+    a {
+      padding: 10px 0;
+    }
 
-.book-navigation {
-  .menu {
-    list-style: disc;
-    padding-left: 10px;
+    .sf-sub-indicator {
+      height: 17px;
+      width: 17px;
+    }
+
+    ul {
+      a {
+        padding: 10px;
+        background: #fff;
+        &:hover {
+          background: #ddd;
+        }
+      }
+    }
   }
 }
 
@@ -100,10 +110,17 @@
 }
 
 .language-switcher-language-url {
+  margin-bottom: 10px;
+
   .links {
     li {
       display: inline-block;
       margin-right: 10px;
+      img {
+        height: 24px;
+        border: 1px solid #ddd;
+        object-fit: cover;
+      }
     }
   }
 }

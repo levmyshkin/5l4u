@@ -9,7 +9,7 @@ _core:
 id: editorial_html5_up_local_actions
 theme: editorial_html5_up
 region: sidebar_first
-weight: -5
+weight: -2
 provider: null
 plugin: local_actions_block
 settings:

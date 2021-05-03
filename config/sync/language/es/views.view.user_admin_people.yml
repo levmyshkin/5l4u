@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      filters:
+        roles_target_id:
+          expose:
+            label: Rol
