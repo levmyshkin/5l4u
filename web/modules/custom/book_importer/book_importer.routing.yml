@@ -5,3 +5,13 @@ book_importer.settings:
     _title: 'Import CSV file'
   requirements:
     _permission: 'import csv files'
+book_importer.translate_api:
+  path: '/node/{node}/translate-api'
+  defaults:
+    _controller: '\Drupal\book_importer\Controller\BookTranslateController::content'
+  requirements:
+    _permission: 'edit translations'
+  options:
+    parameters:
+      node:
+        type: entity:node
