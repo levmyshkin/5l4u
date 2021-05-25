@@ -32,7 +32,7 @@ function editorial_html5_up_preprocess_page(&$variables) {
   }
 
   if (empty($variables['hero_image_mobile'])) {
-    $file = File::load(714);
+    $file = File::load(1886);
     $hero_image = $file->getFileUri();
     $hero_image_mobile = ImageStyle::load('max_1300x1300')->buildUrl($hero_image);
     $hero_image_desktop = ImageStyle::load('full_image')->buildUrl($hero_image);

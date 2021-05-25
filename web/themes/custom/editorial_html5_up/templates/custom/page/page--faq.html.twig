@@ -96,7 +96,7 @@
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
-      <div id="togle-wrap" class="togle-wrap">
+      <div id="toggle-wrap" class="toggle-wrap">
       <a href="{{ front_page }}" class="mobile-logo-admin"><img src="/sites/default/files/logo/logo.svg" alt="logo"></img></a>
       {% if language.getId() == 'en' %}
         <div class="language-link"> <a href="/ru" class="language-link__text">Русский</a> <a href="/ru" class="language-link__image"><img src="/sites/default/files/icons/rus.png" /></a></div>
@@ -119,7 +119,7 @@
         {% block sidebar_first %}
 
           <aside class="row__sidebarfirst sidebarfirst" role="complementary">
-            <a href="#" class="togle" id="togle"><span></span></a>
+            <a href="#" class="toggle" id="toggle"><span></span></a>
             <a href="{{ front_page }}" id="mobile-logo" class="mobile-logo"><img src="/sites/default/files/logo/logo.svg" alt="logo"></img></a>
             <div class="sidebarfirst__content">
               {{ page.sidebar_first }}

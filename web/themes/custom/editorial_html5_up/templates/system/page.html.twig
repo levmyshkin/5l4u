@@ -96,8 +96,7 @@
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
-      <div id="togle-wrap" class="togle-wrap">
-      <a href="{{ front_page }}" class="mobile-logo-admin"><img src="{{ logo }}" alt="logo"></img></a>
+      <div id="toggle-wrap" class="toggle-wrap">
     </div>
 
       {# Header #}
@@ -114,8 +113,8 @@
         {% block sidebar_first %}
 
           <aside class="row__sidebarfirst sidebarfirst" role="complementary">
-            <a href="#" class="togle" id="togle"><span></span></a>
-            <a href="{{ front_page }}" id="mobile-logo" class="mobile-logo"><img src="{{ logo }}" alt="logo"></img></a>
+            <a href="#" class="toggle" id="toggle"><span></span></a>
+            <a href="{{ front_page }}" id="mobile-logo" class="mobile-logo"><img src="{{ logo }}" alt="logo"></img> | 2EasyLifeHacks.com</a>
             <div class="sidebarfirst__content">
               {{ page.sidebar_first }}
             </div>
@@ -146,8 +145,7 @@
         {% if page.top_content %}
           {% block top_content %}
             <div class="top_content">
-              <a href="{{ front_page }}"  class="top_content__logo"><img src="{{ logo }}" alt="logo"></img></a>
-                {{ page.top_content }}
+              {{ page.top_content }}
             </div>
           {% endblock %}
         {% endif %}
