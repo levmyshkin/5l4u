@@ -1,0 +1,12 @@
+name: HTML5up
+type: theme
+description: 'A cuddly theme that offers extra fluffiness.'
+core_version_requirement: ^8 || ^9
+libraries:
+  - html5up/global-styling
+base theme: classy
+regions:
+  header: Header
+  content: Content
+  sidebar_first: 'Sidebar first'
+  footer: Footer

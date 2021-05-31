@@ -41,15 +41,16 @@
     "drupal/antibot": "^1.2",
     "drupal/captcha": "^1.0@beta",
     "drupal/config_split": "^1.4",
-    "drupal/console": "^1.9.7",
+    "drupal/console": "~1.0",
     "drupal/contact_storage": "^1.0@beta",
     "drupal/content_translation_redirect": "^1.2",
     "drupal/core-composer-scaffold": "^9.1",
-    "drupal/core-recommended": "^8.9.13",
+    "drupal/core-recommended": "^8.9.16",
+    "drupal/ctools": "^3.6",
     "drupal/dea_blocker": "^1.0",
-    "drupal/did_this_help": "^2.0",
     "drupal/disqus": "^1.0@RC",
     "drupal/easy_breadcrumb": "^1.12",
+    "drupal/entity_reference_revisions": "^1.9",
     "drupal/eu_cookie_compliance": "^1.8",
     "drupal/extlink": "^1.1",
     "drupal/field_group": "^3.0",
@@ -62,18 +63,17 @@
     "drupal/libraries": "^3.0@beta",
     "drupal/linkit": "^4.3",
     "drupal/metatag": "^1.9",
-    "drupal/paragraphs": "^1.2",
     "drupal/pathauto": "^1.1",
     "drupal/realname": "^1.0@RC",
     "drupal/recaptcha": "^2.4",
     "drupal/redirect": "^1.1",
     "drupal/responsive_favicons": "^1.4",
     "drupal/simple_sitemap": "^3.3",
-    "drupal/superfish": "^1.4",
     "drupal/swiftmailer": "^2.0",
     "drupal/taxonomy_menu": "^3.4",
     "drupal/twig_tweak": "^2.9",
     "drupal/upgrade_status": "^3.4",
+    "drupal/views_infinite_scroll": "^1.8",
     "drupal/yoast_seo": "^1.5",
     "drush/drush": "^9.2",
     "vlucas/phpdotenv": "^2.4",
@@ -132,12 +132,6 @@
         "type:drupal-drush"
       ]
     },
-    "patches": {
-      "drupal/core": {
-        "Dependency on config storage causes circular reference in service container": "https://www.drupal.org/files/issues/2019-12-31/syslog.module-settings-storage-3103620-5.patch",
-        "Make Book navigation translatable": "https://www.drupal.org/files/issues/2020-12-15/2470896_233.patch"
-      }
-    },
     "drupal-scaffold": {
       "locations": {
         "web-root": "web/"
@@ -145,6 +139,6 @@
     }
   },
   "require-dev": {
-    "drupal/core-dev": "8.9.13"
+    "drupal/core-dev": "8.9.16"
   }
 }

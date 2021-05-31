@@ -92,12 +92,15 @@
   {% endblock %}
 {% endif %}
 
+<div class="header-menu">
+  <a href="#" class="toggle" id="toggle"><span></span></a>
+  <a href="{{ front_page }}" id="mobile-logo" class="mobile-logo"><img src="{{ logo }}" alt="logo"></img></a>
+</div>
+
 {# Main #}
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
-      <div id="toggle-wrap" class="toggle-wrap">
-    </div>
 
       {# Header #}
       {% if page.header %}
@@ -113,8 +116,6 @@
         {% block sidebar_first %}
 
           <aside class="row__sidebarfirst sidebarfirst" role="complementary">
-            <a href="#" class="toggle" id="toggle"><span></span></a>
-            <a href="{{ front_page }}" id="mobile-logo" class="mobile-logo"><img src="{{ logo }}" alt="logo"></img> | 2EasyLifeHacks.com</a>
             <div class="sidebarfirst__content">
               {{ page.sidebar_first }}
             </div>
@@ -201,9 +202,8 @@
           </div>
           <div class="col-sm-6">
             <div class="social-media">
-              <a href="https://t-do.ru/drupalbook"  class="telegram" target="_blank" ><i class="fa fa-telegram"></i></a>
-              <a href="https://www.linkedin.com/in/ivan-abramenko/" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-              <a href="https://drupal.org/u/levmyshkin/" class="drupal" target="_blank"><i class="fa fa-drupal"></i></a>
+              <a href="https://www.instagram.com/2easylifehacks/" class="instagram" target="_blank" ><i class="fa fa-instagram"></i></a>
+              <a href="https://www.facebook.com/groups/2easylifehacks/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
             </div>
           </div>
         </div>
