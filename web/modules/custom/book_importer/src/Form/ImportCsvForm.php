@@ -2,51 +2,82 @@
 
 namespace Drupal\book_importer\Form;
 
+use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\migrate\MigrateExecutableInterface;
+use Drupal\migrate\MigrateSkipRowException;
+use Drupal\migrate\Row;
 use Drupal\node\Entity\Node;
+use Drupal\migrate_media_handler\MediaMaker;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\book_importer\TextParser;
 
 /**
  * Import CSV form.
  */
 class ImportCsvForm extends FormBase {
 
-/**
- * @param array $form
- * @param FormStateInterface $form_state
- * @return array
- */
-public function buildForm(array $form, FormStateInterface $form_state) {
-  $form = [
-    '#attributes' => ['enctype' => 'multipart/form-data'],
-  ];
+  /**
+   * Text Parser service.
+   *
+   * @var \Drupal\book_importer\TextParser
+   */
+  protected $textParser;
 
-  $form['file_upload_details'] = [
-    '#markup' => t('<b>The File</b>'),
-  ];
+  /**
+   * Class constructor.
+   * @param \Drupal\book_importer\TextParser $text_parser
+   */
+  public function __construct(TextParser $text_parser) {
+    $this->textParser = $text_parser;
+  }
 
-  $validators = [
-    'file_validate_extensions' => ['csv'],
-  ];
-  $form['csv_file'] = [
-    '#type' => 'managed_file',
-    '#name' => 'csv_file',
-    '#title' => t('File *'),
-    '#size' => 20,
-    '#description' => t('CSV format only'),
-    '#upload_validators' => $validators,
-    '#upload_location' => 'public://content/csv/',
-  ];
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('book_importer.text_parser'),
+    );
+  }
 
-  $form['actions']['#type'] = 'actions';
-  $form['actions']['submit'] = [
-    '#type' => 'submit',
-    '#value' => $this->t('Import CSV'),
-    '#button_type' => 'primary',
-  ];
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return array
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    $form = [
+      '#attributes' => ['enctype' => 'multipart/form-data'],
+    ];
 
-  return $form;
-}
+    $form['file_upload_details'] = [
+      '#markup' => t('<b>The File</b>'),
+    ];
+
+    $validators = [
+      'file_validate_extensions' => ['csv'],
+    ];
+    $form['csv_file'] = [
+      '#type' => 'managed_file',
+      '#name' => 'csv_file',
+      '#title' => t('File *'),
+      '#size' => 20,
+      '#description' => t('CSV format only'),
+      '#upload_validators' => $validators,
+      '#upload_location' => 'public://content/csv/',
+    ];
+
+    $form['actions']['#type'] = 'actions';
+    $form['actions']['submit'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Import CSV'),
+      '#button_type' => 'primary',
+    ];
+
+    return $form;
+  }
 
   /**
    * @return string
@@ -106,6 +137,13 @@ public function buildForm(array $form, FormStateInterface $form_state) {
   public function importCsvNode($row, &$context) {
     $title = $row[0];
     $body = $row[1];
+
+    if (empty($row) || empty($title) || empty($body)) {
+      // @todo Throw exception.
+      return;
+    }
+    $text_parser = \Drupal::service('book_importer.text_parser');
+    $body = $text_parser->renderBody($body);
 
     $node = Node::create([
       'type' => 'article',

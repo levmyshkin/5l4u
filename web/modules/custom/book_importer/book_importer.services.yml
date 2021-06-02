@@ -1,0 +1,6 @@
+services:
+  book_importer.text_parser:
+    class: Drupal\book_importer\TextParser
+    arguments:
+      - '@migrate_media_handler.mediamaker'
+      - '@entity_type.manager'
