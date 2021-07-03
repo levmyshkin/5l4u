@@ -64,7 +64,7 @@ class TextParser {
   public function renderBody($value) {
     // Initialize DOM handling on this value.
     $d = new \DOMDocument();
-    $d->loadHTML($value);
+    $d->loadHTML('<?xml encoding="utf-8" ?>' . $value);
 
     $this->document = $d;
     $this->xpath = new \DOMXPath($this->document);
@@ -103,6 +103,7 @@ class TextParser {
 
       }
     }
+    // @todo strip script and iframe tags.
     // @todo make text string from DOMdocument object.
 
     return $this->document->saveHTML();
