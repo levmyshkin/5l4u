@@ -73,6 +73,8 @@ class TextParser {
     foreach ($this->xpath->query('//img') as $html_node) {
       // Get attributes from the image.
       $src = $html_node->getAttribute('src');
+      $alt = $html_node->getAttribute('alt');
+      $title = $html_node->getAttribute('title');
 
       // Make sure it's not an inline png.
       if (!stripos($src, 'image/png')) {
@@ -91,22 +93,74 @@ class TextParser {
 
         if (!empty($muuid)) {
           // Create a new DOM element for the image in the text.
-          $new_node = $this->document->createElement('drupal-media', "");
+          $new_node = $this->document->createElement('img', "");
           // Add attributes to that element - start with uuid.
           $dom_att = $this->document->createAttribute('data-entity-uuid');
           $dom_att->value = $muuid;
           $new_node->appendChild($dom_att);
 
+          $dom_att = $this->document->createAttribute('src');
+          $dom_att->value = file_create_url($file->getFileUri());
+          $new_node->appendChild($dom_att);
+
+          $dom_att = $this->document->createAttribute('alt');
+          $dom_att->value = $alt;
+          $new_node->appendChild($dom_att);
+
+          $dom_att = $this->document->createAttribute('title');
+          $dom_att->value = $title;
+          $new_node->appendChild($dom_att);
+
           // Replace the <img> with <drupal-media>.
           $html_node->parentNode->replaceChild($new_node, $html_node);
         }
-
       }
     }
-    // @todo strip script and iframe tags.
-    // @todo make text string from DOMdocument object.
 
-    return $this->document->saveHTML();
+    // Remove script. Method 1.
+    $script_tags = $d->getElementsByTagName('script');
+    $length = $script_tags->length;
+
+    for ($i = 0; $i < $length; $i++) {
+      if(is_object($script_tags->item($i)->parentNode)) {
+        $script_tags->item($i)->parentNode->removeChild($script_tags->item($i));
+      }
+    }
+
+    // Remove script. Method 2.
+    $tags = $d->getElementsByTagName('script');
+    $remove = [];
+    foreach($tags as $item) {
+      $remove[] = $item;
+    }
+    foreach ($remove as $item) {
+      $item->parentNode->removeChild($item);
+    }
+
+    // Remove iframe. Method 1.
+    $script_tags = $d->getElementsByTagName('iframe');
+    $length = $script_tags->length;
+
+    for ($i = 0; $i < $length; $i++) {
+      if(is_object($script_tags->item($i)->parentNode)) {
+        $script_tags->item($i)->parentNode->removeChild($script_tags->item($i));
+      }
+    }
+
+    // Remove script. Method 2.
+    $tags = $d->getElementsByTagName('iframe');
+    $remove = [];
+    foreach($tags as $item) {
+      $remove[] = $item;
+    }
+    foreach ($remove as $item) {
+      $item->parentNode->removeChild($item);
+    }
+
+    $html = $this->document->saveHTML();
+    $html = str_replace('<?xml encoding="utf-8" ?>', '', $html);
+
+    return $html;
   }
 
   /**

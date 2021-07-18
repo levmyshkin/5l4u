@@ -1,7 +1,13 @@
 display:
   default:
     display_options:
+      fields:
+        status:
+          label: Estado
       filters:
+        status:
+          group_info:
+            label: Estado
         roles_target_id:
           expose:
             label: Rol

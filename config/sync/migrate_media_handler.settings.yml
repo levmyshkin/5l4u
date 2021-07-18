@@ -1,0 +1,20 @@
+site_uri: '/https?:\/\/[w.]*example\.com/'
+file_source: 'public://d7store'
+file_dest: 'public://filestore'
+file_owner: 1
+image_field_name: field_media_image
+document_field_name: field_media_file
+video_field_name: field_media_oembed_video
+audio_field_name: field_media_audio_file
+img_replace:
+  data-align: ''
+  data-embed-button: media_entity_embed
+  data-entity-embed-display: 'view_mode:media.full'
+  data-entity-type: media
+doc_replace:
+  data-embed-button: media_entity_embed
+  data-entity-embed-display: 'view_mode:media.full'
+  data-entity-type: media
+  data-langcode: en
+_core:
+  default_config_hash: UFD7nBr6gTq8jOeHx0w37eQLAj0HBxmCwRD9GwLgHYg

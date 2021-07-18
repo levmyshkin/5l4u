@@ -1,0 +1,22 @@
+uuid: 07892d73-f784-4687-b25f-bab8092bb0ac
+langcode: en
+status: true
+dependencies:
+  theme:
+    - html5up
+_core:
+  default_config_hash: pxRK7r7D4WdPfEkhEjqOq6V4U6QVz5l6Z1GFGoaTEAY
+id: html5up_local_tasks
+theme: html5up
+region: content
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

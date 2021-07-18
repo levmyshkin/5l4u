@@ -6,7 +6,9 @@
 
 /* Contact */
 
-	ul.contact {
+	@use "sass:math";
+
+ul.contact {
 		list-style: none;
 		padding: 0;
 
@@ -26,7 +28,7 @@
 				line-height: 1.125em;
 				position: absolute;
 				text-align: center;
-				top: (1.5em / 1.5);
+				top: math.div(1.5em, 1.5);
 				width: 1.5em;
 			}
 

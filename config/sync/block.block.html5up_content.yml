@@ -1,0 +1,22 @@
+uuid: a2847378-7b4f-4b99-ad6f-d1eafadf6077
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - html5up
+_core:
+  default_config_hash: b4ArTA86tRoVpESZzLQn_GFQYUNazDsuIpm5S9_e8bs
+id: html5up_content
+theme: html5up
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -12,18 +12,6 @@
 		font-size: 13pt;
 		font-weight: _font(weight);
 		line-height: 1.65;
-
-		@include breakpoint('<=xlarge') {
-			font-size: 11pt;
-		}
-
-		@include breakpoint('<=large') {
-			font-size: 10pt;
-		}
-
-		@include breakpoint('<=xxsmall') {
-			font-size: 9pt;
-		}
 	}
 
 	a {
@@ -98,29 +86,6 @@
 		font-size: 0.7em;
 	}
 
-	@include breakpoint('<=xlarge') {
-		h1 {
-			font-size: 3.5em;
-		}
-	}
-
-	@include breakpoint('<=medium') {
-		h1 {
-			font-size: 3.25em;
-		}
-	}
-
-	@include breakpoint('<=small') {
-		h1 {
-			font-size: 2em;
-			line-height: 1.4;
-		}
-
-		h2 {
-			font-size: 1.5em;
-		}
-	}
-
 	sub {
 		font-size: 0.8em;
 		position: relative;
@@ -137,7 +102,7 @@
 		border-left: solid 3px _palette(border);
 		font-style: italic;
 		margin: 0 0 _size(element-margin) 0;
-		padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4) _size(element-margin);
+		padding: (_size(element-margin) * 0.25) 0 (_size(element-margin) * 0.25) _size(element-margin);
 	}
 
 	code {

@@ -1,0 +1,18 @@
+.language-switcher-language-url {
+  .links {
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      &.ru {
+        display: none;
+      }
+      a {
+        text-decoration: none;
+        border: 0;
+      }
+    }
+  }
+}

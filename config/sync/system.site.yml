@@ -1,11 +1,11 @@
 uuid: 34bbbe0d-c980-4335-a003-a7ba653cf26c
-name: 'Easy Lifehacks'
+name: 2EasyLifeHacks.com
 mail: levmyshkin89@gmail.com
 slogan: ''
 page:
   403: /node/1640
   404: /node/1641
-  front: /node
+  front: /articles
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

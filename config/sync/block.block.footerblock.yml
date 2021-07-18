@@ -1,0 +1,25 @@
+uuid: 9cb3b387-50a5-4a59-a291-97bfb13a01b4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:032484d9-0c66-4e0e-9b1e-18f20785460a'
+  module:
+    - block_content
+  theme:
+    - html5up
+id: footerblock
+theme: html5up
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:032484d9-0c66-4e0e-9b1e-18f20785460a'
+settings:
+  id: 'block_content:032484d9-0c66-4e0e-9b1e-18f20785460a'
+  label: 'Footer block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

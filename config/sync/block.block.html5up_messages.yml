@@ -1,0 +1,22 @@
+uuid: fdb20388-d4a7-4702-b8bc-c13b22e8a018
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - html5up
+_core:
+  default_config_hash: 1GUwFJPSFP2yptgKYKIYQS3YfAXbWgzR-bQ_TQARkNc
+id: html5up_messages
+theme: html5up
+region: header
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      fields:
+        bundle:
+          label: Tipo
+        status:
+          label: Estado
+      filters:
+        bundle:
+          expose:
+            label: Tipo

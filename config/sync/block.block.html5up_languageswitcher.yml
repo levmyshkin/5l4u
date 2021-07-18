@@ -1,0 +1,20 @@
+uuid: 3820cd02-e9b3-4b9f-940f-327d1810d4d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - html5up
+id: html5up_languageswitcher
+theme: html5up
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility: {  }

@@ -13,18 +13,11 @@ dependencies:
     - image.style.thumbnail
     - node.type.article
   module:
-    - field_layout
     - image
-    - layout_discovery
     - metatag
     - path
     - text
     - yoast_seo
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 _core:
   default_config_hash: vPb_yvhA-xuNoV_yOmOwYxGuHNRIH1CoMK2qi7BSga0
 id: node.article.default

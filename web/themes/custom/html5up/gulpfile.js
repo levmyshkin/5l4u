@@ -3,21 +3,28 @@
 // --------------------------------------------------
 
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-clean-css'),
-    rename = require('gulp-rename'),
+    sass = require('gulp-dart-scss'),
+    postcss = require("gulp-postcss"),
+    autoprefixer = require("autoprefixer"),
+    cssnano = require("cssnano"),
+    sourcemaps = require("gulp-sourcemaps"),
     notify = require('gulp-notify'),
-    plumber = require('gulp-plumber'),
-    gutil = require('gulp-util'),
-    childprocess = require('child_process'),
-    sourcemaps = require('gulp-sourcemaps'),
-    merge = require('merge-stream'),
-    spritesmith = require('gulp.spritesmith');
+    sassUnicode = require('gulp-sass-unicode'),
+    rename = require('gulp-rename'),
+    path = require('path'),
+    stripCssComments = require('gulp-strip-css-comments');
 
-// --------------------------------------------------
-// General Config
-// --------------------------------------------------
+    // autoprefixer = require('gulp-autoprefixer'),
+    // minifycss = require('gulp-clean-css'),
+    // rename = require('gulp-rename'),
+    // notify = require('gulp-notify'),
+    // plumber = require('gulp-plumber'),
+    // gutil = require('gulp-util'),
+    // childprocess = require('child_process'),
+    // sourcemaps = require('gulp-sourcemaps'),
+    // merge = require('merge-stream'),
+    // spritesmith = require('gulp.spritesmith')
+
 
 var config = {
     // main scss files that import partials
@@ -32,101 +39,81 @@ var config = {
     allImgs: 'assets/img/**/*'
 };
 
-// --------------------------------------------------
-// Custom Messages
-// --------------------------------------------------
 
-/**
- * Adding custom messages to output to the browserSync status
- */
-var messages = {
-    sassBuild: '<span style="color: grey">Running:</span> sass'
-};
+// Define tasks after requiring dependencies
+function components() {
 
-// --------------------------------------------------
-// Sass
-// --------------------------------------------------
+  return gulp.src('assets/components/**/**/scss/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sassUnicode())
+    // .pipe(notify("init"))
+    .pipe(sass().on('error', swallowError))
+    // .pipe(notify("rerename"))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(stripCssComments())
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(rename(function (file) {
+      // Returns a completely new object, make sure you return all keys needed!
+      let parentFolder = path.dirname(file.dirname)
+      let extname = '';
+      if (file.extname.endsWith('.map')) {
+        extname = '.map';
+      }
+      else {
+        extname = '.css';
+      }
 
-/**
- * Compile SCSS files
- */
-gulp.task('sass', function() {
-    return gulp.src(config.scssSrc)
-        .pipe(plumber({
-            errorHandler: function(err) {
-              gutil.beep();
-              console.log(err);
-              this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass({errLogToConsole: true, outputStyle: "nested"}))
-        .pipe(autoprefixer(
-            'last 2 versions',
-            'safari 6',
-            'ie 8',
-            'ie 9',
-            'opera 12.1',
-            'ios 6',
-            'android 4'
-        ))
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest(config.cssDest))
-        .pipe(notify({
-          message: 'SCSS task complete'
-         }));
-});
+      return {
+        dirname: parentFolder + '/css',
+        basename: file.basename,
+        extname: extname
+      };
+
+    }))
+    .pipe(gulp.dest('assets/components'));
+    // .pipe(notify("Gulped"));
+
+  // gulp.task('sass:watch', function () {
+  //   gulp.watch('./sass/**/*.scss', ['sass']);
+  // });
+}
+
+function style() {
+
+  return gulp.src(config.allScss)
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', swallowError))
+    .pipe(sassUnicode())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(stripCssComments())
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulp.dest(config.cssDest));
+    // .pipe(notify("Gulped."));
+
+}
+
+// Expose the task by exporting it
+// This allows you to run it from the commandline using
+// $ gulp style
+exports.style = style;
+exports.components = components;
+
+function watch(){
+    // gulp.watch takes in the location of the files to watch for changes
+    // and the name of the function we want to run on change
+    gulp.watch('assets/scss/**/*.scss', style)
+    gulp.watch('assets/components/**/**/scss/**/*.scss', components)
+}
+
+// Don't forget to expose the task!
+exports.watch = watch
 
 
-// --------------------------------------------------
-// CSS Sprites
-// --------------------------------------------------
+function swallowError (error) {
 
-gulp.task('sprite', function () {
-  var spriteData = gulp.src('assets/img/sprite-source/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: '_sprite.scss',
-    retinaSrcFilter: ['assets/img/sprite-source/*-2x.png'],
-    retinaImgName: 'sprite-2x.png',
-    imgPath: '/sites/all/themes/smu/assets/img/sprite.png',
-    retinaImgPath: '/sites/all/themes/smu/assets/img/sprite-2x.png',
-    padding: 5,
-    cssVarMap: function(sprite) {
-      sprite.name = 'sprite-' + sprite.name;
-    }
-  }));
+  // If you want details of the error in the console
+  console.log(error.toString())
 
-  // Pipe image stream through image optimizer and onto disk
-  var imgStream = spriteData.img
-    .pipe(gulp.dest('assets/img/'));
-
-  // Pipe CSS stream through CSS optimizer and onto disk
-  var cssStream = spriteData.css
-    .pipe(gulp.dest('assets/scss/generated/'));
-
-  // Return a merged stream to handle both `end` events
-  return merge(imgStream, cssStream);
-});
-
-// --------------------------------------------------
-// Watch
-// --------------------------------------------------
-
-/**
- * Watch scss files for changes & recompile
- * Watch html, md, and js files, run jekyll & reload browserSync
- */
-gulp.task('watch', function() {
-    gulp.watch(['assets/img/sprite-source/*.png'], ['sprite']);
-    gulp.watch(config.allScss, ['sass']);
-});
-
-// --------------------------------------------------
-// Default
-// --------------------------------------------------
-
-/**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch browserSync & watch files.
- */
-gulp.task('default', ['watch', 'sass']);
+  this.emit('end')
+}

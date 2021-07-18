@@ -7,17 +7,17 @@ dependencies:
 id: linkit
 label: linkit
 description: ''
-attributes: {  }
 matchers:
   a3fc4cdd-fb42-435d-a121-f3f3d152e552:
     uuid: a3fc4cdd-fb42-435d-a121-f3f3d152e552
     id: 'entity:node'
     weight: 0
     settings:
-      result_description: ''
       bundles:
         article: article
         book: book
         page: page
       group_by_bundle: true
       include_unpublished: false
+      substitution_type: canonical
+      metadata: ''

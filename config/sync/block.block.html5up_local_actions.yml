@@ -1,0 +1,20 @@
+uuid: a8ea9f9e-d3f7-44f4-b345-511947afe497
+langcode: en
+status: true
+dependencies:
+  theme:
+    - html5up
+_core:
+  default_config_hash: '-8Z7FRWPgE6I00Yk0u7Mky9U3EzM8dvPwcwC3tCbc7k'
+id: html5up_local_actions
+theme: html5up
+region: header
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

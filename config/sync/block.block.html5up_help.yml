@@ -1,0 +1,22 @@
+uuid: 479c1e41-eb6e-4d44-9a2c-87ae69bd2ac1
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - html5up
+_core:
+  default_config_hash: lg4WNVqXCCcSLxUVUsNeYjssDTYUQ4Bs61C0M78t_kw
+id: html5up_help
+theme: html5up
+region: header
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

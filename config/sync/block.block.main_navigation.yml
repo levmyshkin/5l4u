@@ -1,0 +1,25 @@
+uuid: 7baeaaab-5692-4fd8-b043-fe869b006066
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - html5up
+id: main_navigation
+theme: html5up
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

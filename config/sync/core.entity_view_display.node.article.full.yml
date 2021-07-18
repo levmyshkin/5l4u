@@ -13,19 +13,9 @@ dependencies:
     - field.field.node.article.field_yoast_seo
     - node.type.article
   module:
-    - field_layout
-    - layout_builder
     - metatag
     - text
     - user
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
-  layout_builder:
-    enabled: false
-    allow_custom: false
 _core:
   default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
 id: node.article.full

@@ -31,3 +31,4 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view disqus comments'
+  - 'view media'

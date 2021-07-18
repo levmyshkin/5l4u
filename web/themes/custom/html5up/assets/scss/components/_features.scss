@@ -77,50 +77,7 @@
 			}
 		}
 
-		@include breakpoint('<=medium') {
-			margin: 0 0 _size(element-margin) 0;
-			width: 100%;
-
-			article {
-				margin: 0 0 $gutter 0;
-				width: 100%;
-
-				&:nth-child(2n - 1) {
-					margin-right: 0;
-				}
-
-				&:nth-child(2n) {
-					margin-left: 0;
-				}
-
-				&:nth-last-child(1),
-				&:nth-last-child(2) {
-					margin-bottom: $gutter;
-				}
-
-				&:last-child {
-					margin-bottom: 0;
-				}
-
-				.icon {
-					height: 8em;
-					line-height: 8em;
-					width: 8em;
-
-					&:before {
-						font-size: 2.25rem;
-					}
-
-					&:after {
-						height: 6em;
-						margin: -3em 0 0 -3em;
-						width: 6em;
-					}
-				}
-			}
-		}
-
-		@include breakpoint('<=xsmall') {
+    @media #{$medium-down} {
 			article {
 				@include vendor('flex-direction', 'column');
 				@include vendor('align-items', 'flex-start');
@@ -144,7 +101,7 @@
 			}
 		}
 
-		@include breakpoint('<=xsmall') {
+    @media #{$small-down} {
 			article {
 				.icon {
 					&:before {

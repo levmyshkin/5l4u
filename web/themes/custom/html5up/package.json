@@ -1,19 +1,28 @@
 {
-  "name": "YMCA",
-  "version": "16.12.13",
-  "dependencies": {},
+  "name": "www_bootstrap",
+  "version": "1.0.0",
+  "description": "<!-- @file Instructions for subtheming using the CDN Starterkit. --> <!-- @defgroup sub_theming_cdn --> <!-- @ingroup sub_theming --> # CDN Starterkit",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "browserslist": "^4.0.2",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-util": "^3.0.7",
-    "gulp.spritesmith": "^6.2.1",
-    "merge-stream": "^1.0.1"
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.2",
+    "gulp": "^4.0.2",
+    "gulp-dart-scss": "^1.1.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass-unicode": "^1.0.5",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-strip-css-comments": "^2.0.0"
+  },
+  "dependencies": {
+    "cucumber": "*",
+    "path": "^0.12.7",
+    "postcss": "^8.2.13"
   }
 }

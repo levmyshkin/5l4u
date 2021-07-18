@@ -1,8 +1,0 @@
-uuid: 511d3915-3731-4f06-8595-3965ce513ae9
-langcode: en
-status: true
-dependencies: {  }
-id: node__book
-label: 'Content: Book page'
-code: 302
-message: ''
