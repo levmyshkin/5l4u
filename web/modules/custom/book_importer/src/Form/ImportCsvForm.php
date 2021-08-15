@@ -143,7 +143,9 @@ class ImportCsvForm extends FormBase {
       return;
     }
     $text_parser = \Drupal::service('book_importer.text_parser');
+    $category_parser = \Drupal::service('book_importer.category_parser');
     $body = $text_parser->renderBody($body);
+    $categories = $category_parser->renderCategory($row[4]);
 
     $node = Node::create([
       'type' => 'article',
@@ -158,6 +160,11 @@ class ImportCsvForm extends FormBase {
         'format' => 'full_html',
       ],
     ]);
+    if (!empty($categories)) {
+      foreach ($categories as $category) {
+        $node->field_tags->appendItem($category);
+      }
+    }
     $node->save();
     $context['results'][] = 'Created node: ' . $node->id();
     $context['sandbox']['current_id'] = $node->id();

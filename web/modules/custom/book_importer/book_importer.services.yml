@@ -4,3 +4,7 @@ services:
     arguments:
       - '@migrate_media_handler.mediamaker'
       - '@entity_type.manager'
+  book_importer.category_parser:
+    class: Drupal\book_importer\CategoryParser
+    arguments:
+      - '@entity_type.manager'

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45f5d9821fdcfcf93cffcc4b69b7a14c",
+    "content-hash": "bd1ac89d1a686c827e9565ee6d8148a5",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3837,6 +3837,50 @@
                 "source": "https://cgit.drupalcode.org/simple_sitemap",
                 "issues": "https://drupal.org/project/issues/simple_sitemap",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/simpleblog",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/simpleblog.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/simpleblog-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "c89eaddea826ee20ab86bb6d2264102dc38151da"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1626470248",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ThirstySix",
+                    "homepage": "https://www.drupal.org/user/824886"
+                }
+            ],
+            "description": "Simple Blog Drupal Responsive Blog theme. Developed by <a target=\"_blank\" href=\"http://www.thirstysix.com\">Thirsty Six</a>",
+            "homepage": "https://www.drupal.org/project/simpleblog",
+            "support": {
+                "source": "https://git.drupalcode.org/project/simpleblog"
             }
         },
         {
