@@ -62,6 +62,7 @@ class BookTranslateController extends ControllerBase {
     );
   }
 
+  // @todo move to Service.
   /**
    * @param $text
    * @param $from

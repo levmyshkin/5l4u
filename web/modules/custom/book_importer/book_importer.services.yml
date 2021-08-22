@@ -8,3 +8,6 @@ services:
     class: Drupal\book_importer\CategoryParser
     arguments:
       - '@entity_type.manager'
+  book_importer.translator:
+    class: Drupal\book_importer\Translator
+    arguments: ['@http_client_factory']

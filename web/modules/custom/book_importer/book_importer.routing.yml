@@ -5,6 +5,7 @@ book_importer.settings:
     _title: 'Import CSV file'
   requirements:
     _permission: 'import csv files'
+
 book_importer.translate_api:
   path: '/node/{node}/translate-api'
   defaults:
@@ -15,3 +16,11 @@ book_importer.translate_api:
     parameters:
       node:
         type: entity:node
+
+translate_terms.settings:
+  path: '/admin/content/translate-terms'
+  defaults:
+    _form: '\Drupal\book_importer\Form\TranslateTerms'
+    _title: 'Translate Terms'
+  requirements:
+    _permission: 'import csv files'
