@@ -45,9 +45,6 @@ class TranslateTerms extends FormBase {
    * @return array
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-
-    // @todo Display table with terms and their translations.
-
     $content = '<table><tr><th>Russian</th><th>English</th><th>Spanish</th></tr>';
     $query = \Drupal::entityQuery('taxonomy_term');
     $query->condition('vid', "tags");

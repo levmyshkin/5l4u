@@ -17,10 +17,19 @@ book_importer.translate_api:
       node:
         type: entity:node
 
-translate_terms.settings:
+book_importer.translate_terms:
   path: '/admin/content/translate-terms'
   defaults:
     _form: '\Drupal\book_importer\Form\TranslateTerms'
     _title: 'Translate Terms'
+  requirements:
+    _permission: 'import csv files'
+
+
+book_importer.translate_nodes:
+  path: '/admin/content/translate-nodes'
+  defaults:
+    _form: '\Drupal\book_importer\Form\TranslateNodes'
+    _title: 'Translate Nodes'
   requirements:
     _permission: 'import csv files'
