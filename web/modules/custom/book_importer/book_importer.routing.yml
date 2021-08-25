@@ -33,3 +33,12 @@ book_importer.translate_nodes:
     _title: 'Translate Nodes'
   requirements:
     _permission: 'import csv files'
+
+
+book_importer.postprocess_nodes:
+  path: '/admin/content/postprocess-nodes'
+  defaults:
+    _form: '\Drupal\book_importer\Form\PostprocessNodes'
+    _title: 'Postprocess Nodes'
+  requirements:
+    _permission: 'import csv files'
