@@ -1,0 +1,39 @@
+name: BookBase
+type: theme
+base theme: simpleblog
+description: 'Book Base'
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+# Regions
+regions:
+  site_brand: 'Site Brand'
+  main_navigation: 'Main Navigation'
+  highlighted: 'Highlighted'
+  breadcrumb: 'Breadcrumb'
+  title: 'Title'
+  help: 'Help'
+  sidebar_first: 'First Sidebar'
+  content: 'Content'
+  sidebar_second: 'Second Sidebar'
+  footer_first: 'First Bottom'
+  footer_second: 'Second Bottom'
+  footer_third: 'Third Bottom'
+  footer_fourth: 'Fourth Bottom'
+
+# Libraries
+libraries:
+  - bookbase/global-styling
+
+# Features
+features:
+  - 'logo'
+  - 'name'
+  - 'slogan'
+  - 'node_user_picture'
+  - 'comment_user_picture'
+  - 'comment_user_verification'
+  - 'favicon'
+  - 'main_menu'
+  - 'secondary_menu'
+
