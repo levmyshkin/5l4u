@@ -121,29 +121,40 @@ class PostprocessNodes extends FormBase {
 
     if (!empty($ru) && !empty($en)) {
       $translated_entity = $node->getTranslation('en');
-      $body = $translated_entity->body->value;
-      $body = str_replace('<div class="detailInfo__detailWebform"><a name="webform"></a></div>', '', $body);
-      $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
-      $body = str_replace('</body></html>', '', $body);
-      for ($i = 0; $i < 30; $i++) {
-        $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);
-      }
-      $translated_entity->body->value = $body;
-      $translated_entity->body->format = 'full_html';
+      $tags = $node->field_tags->getValue();
+      $translated_entity->field_tags->setValue($tags);
+
+      // Remove unused HTML.
+//      $body = $translated_entity->body->value;
+//      $body = str_replace('<div class="detailInfo__detailWebform"><a name="webform"></a></div>', '', $body);
+//      $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
+//      $body = str_replace('</body></html>', '', $body);
+//      for ($i = 0; $i < 30; $i++) {
+/*        $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);*/
+//      }
+//      $translated_entity->body->value = $body;
+//      $translated_entity->body->format = 'full_html';
+
+
       $translated_entity->save();
     }
 
     if (!empty($ru) && !empty($es)) {
       $translated_entity = $node->getTranslation('es');
-      $body = $translated_entity->body->value;
-      $body = str_replace('<div class="detailInfo__detailWebform"><a name="webform"></a></div>', '', $body);
-      $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
-      $body = str_replace('</body></html>', '', $body);
-      for ($i = 0; $i < 30; $i++) {
-        $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);
-      }
-      $translated_entity->body->value = $body;
-      $translated_entity->body->format = 'full_html';
+      $tags = $node->field_tags->getValue();
+      $translated_entity->field_tags->setValue($tags);
+
+      // Remove unused HTML.
+//      $body = $translated_entity->body->value;
+//      $body = str_replace('<div class="detailInfo__detailWebform"><a name="webform"></a></div>', '', $body);
+//      $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
+//      $body = str_replace('</body></html>', '', $body);
+//      for ($i = 0; $i < 30; $i++) {
+/*        $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);*/
+//      }
+//      $translated_entity->body->value = $body;
+//      $translated_entity->body->format = 'full_html';
+
       $translated_entity->save();
     }
 
