@@ -1,0 +1,49 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Translator",
+		"_postman_id": "16df92d7-ddca-1c26-a0b1-662c599b88de",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Translator",
+			"request": {
+				"url": "http://localhost:8000",
+				"method": "POST",
+				"header": [
+					{
+						"key": "translateText",
+						"value": "Hi",
+						"description": ""
+					},
+					{
+						"key": "translateFrom",
+						"value": "en",
+						"description": ""
+					},
+					{
+						"key": "translateTo",
+						"value": "ru",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "string",
+							"value": "Test sadfsad \"asfas\" <a href=\"#\">asdf</a> ",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
