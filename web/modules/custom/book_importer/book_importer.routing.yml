@@ -6,10 +6,10 @@ book_importer.settings:
   requirements:
     _permission: 'import csv files'
 
-book_importer.translate_api:
-  path: '/node/{node}/translate-api'
+book_importer.single_translate:
+  path: '/node/{node}/single-translate'
   defaults:
-    _controller: '\Drupal\book_importer\Controller\BookTranslateController::content'
+    _controller: '\Drupal\book_importer\Controller\BookTranslateController::singleTranslate'
   requirements:
     _permission: 'edit translations'
   options:
@@ -27,7 +27,7 @@ book_importer.translate_terms:
 
 
 book_importer.translate_nodes:
-  path: '/admin/content/translate-nodes'
+    path: '/admin/content/translate-nodes'
   defaults:
     _form: '\Drupal\book_importer\Form\TranslateNodes'
     _title: 'Translate Nodes'

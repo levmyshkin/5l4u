@@ -4,9 +4,43 @@ namespace Drupal\book_importer\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\node\Entity\Node;
+use Drupal\book_importer\NodejsTranslator;
 use Symfony\Component\HttpFoundation\Request;
+use GuzzleHttp\Stream\Stream;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class BookTranslateController extends ControllerBase {
+
+  /**
+   * Translator for text service.
+   *
+   * @var \Drupal\book_importer\NodejsTranslator
+   */
+  protected $translator;
+
+  /**
+   * BookTranslateController constructor.
+   *
+   * @param \Drupal\book_importer\NodejsTranslator $translator
+   *   The text translator.
+   */
+  public function __construct(NodejsTranslator $translator) {
+    $this->translator = $translator;
+  }
+
+  /**
+   * {@inheritdoc}
+   *
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   The Drupal service container.
+   *
+   * @return static
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('book_importer.nodejs_translator')
+    );
+  }
 
   /**
    * @param Node $node
@@ -14,9 +48,9 @@ class BookTranslateController extends ControllerBase {
    * @return string[]
    * @throws \Drupal\Core\Entity\EntityStorageException
    *
-   * Translate page manually.
+   * Postprocess signle node.
    */
-  public function content(Node $node, Request $request) {
+  public function singleTranslate(Node $node, Request $request) {
     $en = $node->getTranslationStatus('en');
     $es = $node->getTranslationStatus('es');
     $ru = $node->getTranslationStatus('ru');
@@ -25,9 +59,9 @@ class BookTranslateController extends ControllerBase {
       $node_ru = $node->getTranslation('ru');
       $node_en = $node->addTranslation('en');
       $title_ru = $node_ru->getTitle();
-      $title_en = $this->translateText($title_ru, 'ru_RU', 'en_GB');
+      $title_en = $this->translator->translateText($title_ru, 'ru', 'en');
       $body_ru = $node_ru->body->value;
-      $body_en = $this->translateText($body_ru, 'ru_RU', 'en_GB');
+      $body_en = $this->translator->translateText($body_ru, 'ru', 'en');
       $node_en->title = $title_en;
       $node_en->body->value = $body_en;
       $node_en->body->format = 'full_html';
@@ -38,9 +72,9 @@ class BookTranslateController extends ControllerBase {
       $node_ru = $node->getTranslation('ru');
       $node_es = $node->addTranslation('es');
       $title_ru = $node_ru->getTitle();
-      $title_es = $this->translateText($title_ru, 'ru_RU', 'es_ES');
+      $title_es = $this->translator->translateText($title_ru, 'ru', 'es');
       $body_ru = $node_ru->body->value;
-      $body_es = $this->translateText($body_ru, 'ru_RU', 'es_ES');
+      $body_es = $this->translator->translateText($body_ru, 'ru', 'es');
       $node_es->title = $title_es;
       $node_es->body->value = $body_es;
       $node_es->body->format = 'full_html';
@@ -62,35 +96,6 @@ class BookTranslateController extends ControllerBase {
     );
   }
 
-  // @todo move to Service.
-  /**
-   * @param $text
-   * @param $from
-   * @param $to
-   * @return false
-   *
-   * Translate helper function.
-   */
-  public function translateText($text, $from, $to) {
-    $base_url = 'https://api-b2b.backenster.com/b1/api/v3/translate';
-    $api_key = 'a_lRJFW8NLtCLO7orpURi6bLpkIZoWqV6xIwuLRUmV6GlOYvkPPa2EYqbTCQEB4zFIYWZfD2GkPBurtORo';
-    $client = \Drupal::service('http_client_factory')->fromOptions([
-      'headers' => ['Authorization' => $api_key],
-    ]);;
-    $request = $client->post($base_url, [
-      'json' => [
-        'from'=> $from,
-        'to' => $to,
-        'data' => $text,
-        'platform' => 'api',
-        'translateMode' => 'html',
-      ],
-    ]);
-    $response = json_decode($request->getBody());
-    if (empty($response) || !empty($response->err)) {
-      return FALSE;
-    }
-    return $response->result;
-  }
+
 
 }

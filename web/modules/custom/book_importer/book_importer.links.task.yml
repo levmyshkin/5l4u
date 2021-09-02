@@ -1,4 +1,4 @@
-book_importer.translate_api:
-  route_name: book_importer.translate_api
+book_importer.single_translate:
+  route_name: book_importer.single_translate
   base_route: entity.node.canonical
-  title: 'Translate API'
+  title: 'Single Translate'

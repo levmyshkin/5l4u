@@ -25,10 +25,11 @@ const server = http.createServer((request, response) => {
 
       // Too much POST data, kill the connection!
       // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
-      if (body.length > 1e6)
+      if (body.length > 7e6)
         request.connection.destroy();
     });
 
+    // @todo Setup proxy.
     request.on('end', function () {
       var post = qs.parse(body);
       console.log(post, 'post');
@@ -51,6 +52,7 @@ const server = http.createServer((request, response) => {
         console.log(translateResponse.from.text.didYouMean, 'did you mean'); // OUTPUT: false
         response.end(translateResponse.text);
       }).catch(err => {
+        console.log(err);
         response.writeHead(401, err);
         response.end(err);
       });

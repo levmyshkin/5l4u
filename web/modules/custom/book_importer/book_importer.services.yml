@@ -11,3 +11,10 @@ services:
   book_importer.translator:
     class: Drupal\book_importer\Translator
     arguments: ['@http_client_factory']
+  book_importer.nodejs_translator:
+    class: Drupal\book_importer\NodejsTranslator
+    arguments: ['@http_client_factory']
+  book_importer.single_translate:
+    class: \Drupal\book_importer\Commands\SingleTranslateCommand
+    tags:
+      - { name: drush.command }

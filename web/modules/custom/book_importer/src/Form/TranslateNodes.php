@@ -2,7 +2,7 @@
 
 namespace Drupal\book_importer\Form;
 
-use Drupal\book_importer\Translator;
+use Drupal\book_importer\NodejsTranslator;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -16,17 +16,17 @@ class TranslateNodes extends FormBase {
   /**
    * Translator for text service.
    *
-   * @var \Drupal\book_importer\Translator
+   * @var \Drupal\book_importer\NodejsTranslator
    */
   protected $translator;
 
   /**
    * Class constructor.
    *
-   * @param \Drupal\book_importer\Translator $translator
+   * @param \Drupal\book_importer\NodejsTranslator $translator
    *   Translate text.
    */
-  public function __construct(Translator $translator) {
+  public function __construct(NodejsTranslator $translator) {
     $this->translator = $translator;
   }
 
@@ -35,7 +35,7 @@ class TranslateNodes extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('book_importer.translator'),
+      $container->get('book_importer.nodejs_translator'),
     );
   }
 
@@ -147,36 +147,67 @@ class TranslateNodes extends FormBase {
       return;
     }
 
-    $translator = \Drupal::service('book_importer.translator');
+    $translator = \Drupal::service('book_importer.nodejs_translator');
+
+    // Preprocess nodes.
+    // UTF-8 decode for Russian language.
+    $body = $node->body->value;
 
     $en = $node->getTranslationStatus('en');
     $es = $node->getTranslationStatus('es');
-    $ru = $node->getTranslationStatus('ru');
 
-    if (!empty($ru) && empty($en)) {
-      $node_ru = $node->getTranslation('ru');
-      $node_en = $node->addTranslation('en');
-      $title_ru = $node_ru->getTitle();
-      $title_en = $translator->translateText($title_ru, 'ru_RU', 'en_GB');
-      $body_ru = $node_ru->body->value;
-      $body_en = $translator->translateText($body_ru, 'ru_RU', 'en_GB');
-      $node_en->title = $title_en;
-      $node_en->body->value = $body_en;
-      $node_en->body->format = 'full_html';
-      $node_en->save();
+    if (empty($es) && empty($en)) {
+      $body = html_entity_decode($body);
+      $body = str_replace('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">', '', $body);
+      $body = str_replace('<div class="detailInfo__detailWebform">                                                    </div>', '', $body);
+      $body = str_replace('class="detailInfo__detailText detailText"', '', $body);
+      $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
+      $body = str_replace('<body>', '', $body);
+      $body = str_replace('</body>', '', $body);
+      $body = str_replace('<html>', '', $body);
+      $body = str_replace('</html>', '', $body);
+
+      // Remove all links from text.
+      for ($i = 0; $i < 30; $i++) {
+        $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);
+      }
+
+      $node->body->value = $body;
+      $node->body->format = 'full_html';
+      $node->save();
     }
 
-    if (!empty($ru) && empty($es)) {
-      $node_ru = $node->getTranslation('ru');
-      $node_es = $node->addTranslation('es');
-      $title_ru = $node_ru->getTitle();
-      $title_es = $translator->translateText($title_ru, 'ru_RU', 'es_ES');
-      $body_ru = $node_ru->body->value;
-      $body_es = $translator->translateText($body_ru, 'ru_RU', 'es_ES');
-      $node_es->title = $title_es;
-      $node_es->body->value = $body_es;
-      $node_es->body->format = 'full_html';
-      $node_es->save();
+    $ru = $node->getTranslationStatus('ru');
+    if (empty($ru)) {
+      return;
+    }
+
+    // Google translate langcodes are the same with Drupal langcodes.
+    // GT langcodes => Drupal langcodes.
+    $languages = [
+      'en' => 'en',
+      'es' => 'es',
+    ];
+
+    foreach ($languages as $language) {
+      $translation_status = $node->getTranslationStatus($language);
+      if (empty($translation_status)) {
+        $node_ru = $node->getTranslation('ru');
+        $node_translated = $node->addTranslation($language);
+        $title_ru = $node_ru->getTitle();
+        $title_translated = $translator->translateText($title_ru, 'ru', $language);
+        $node_translated->title = $title_translated;
+
+        $body_ru = $node_ru->body->value;
+        $body_translated = $translator->translateText($body_ru, 'ru', $language);
+        $node_translated->body->value = $body_translated;
+        $node_translated->body->format = 'full_html';
+
+        $tags = $node->field_tags->getValue();
+        $node_translated->field_tags->setValue($tags);
+
+        $node_translated->save();
+      }
     }
 
     $context['results'][] = 'Created node: ' . $node->id();
