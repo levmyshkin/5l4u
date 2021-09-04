@@ -47,13 +47,42 @@ class NodejsTranslator {
     $translated_text = '';
     foreach ($chunks as $chunk) {
       $translated_text .= $this->getTranslation($chunk, $from, $to);
-      sleep(15);
+      $random_time = rand(25, 35);
+      sleep($random_time);
     }
     $translated_text = str_replace(' / ', '/', $translated_text);
     $translated_text = str_replace('/ ', '/', $translated_text);
     $translated_text = str_replace('0 -0', '0-0', $translated_text);
     $translated_text = str_replace(' .png', '.png', $translated_text);
+    $translated_text = str_replace('. png', '.png', $translated_text);
     $translated_text = str_replace(' .jpg', '.jpg', $translated_text);
+    $translated_text = str_replace('. jpg', '.jpg', $translated_text);
+
+    $translated_text = str_replace('/content /', '/content/', $translated_text);
+
+    $translated_text = str_replace('alt = "', '" alt="', $translated_text);
+    $translated_text = str_replace('alt ="', '" alt="', $translated_text);
+    $translated_text = str_replace('alt= "', '" alt="', $translated_text);
+
+    $translated_text = str_replace('title = "', ' title="', $translated_text);
+    $translated_text = str_replace('title ="', ' title="', $translated_text);
+    $translated_text = str_replace('title= "', ' title="', $translated_text);
+
+    $translated_text = str_replace('src = "', ' src="', $translated_text);
+    $translated_text = str_replace('src ="', ' src="', $translated_text);
+    $translated_text = str_replace('src= "', ' src="', $translated_text);
+
+    $translated_text = str_replace('class = "', ' class="', $translated_text);
+    $translated_text = str_replace('class= "', ' class="', $translated_text);
+    $translated_text = str_replace('class ="', ' class="', $translated_text);
+
+    $translated_text = str_replace('id = "', ' class="', $translated_text);
+    $translated_text = str_replace('id= "', ' class="', $translated_text);
+    $translated_text = str_replace('id ="', ' class="', $translated_text);
+
+    $translated_text = str_replace('data-entity-uuid = "', ' data-entity-uuid="', $translated_text);
+    $translated_text = str_replace('data-entity-uuid= "', ' data-entity-uuid="', $translated_text);
+    $translated_text = str_replace('data-entity-uuid ="', ' data-entity-uuid="', $translated_text);
 
     return $translated_text;
   }

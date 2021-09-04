@@ -151,30 +151,30 @@ class TranslateNodes extends FormBase {
 
     // Preprocess nodes.
     // UTF-8 decode for Russian language.
-    $body = $node->body->value;
+//    $body = $node->body->value;
 
     $en = $node->getTranslationStatus('en');
     $es = $node->getTranslationStatus('es');
 
     if (empty($es) && empty($en)) {
-      $body = html_entity_decode($body);
-      $body = str_replace('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">', '', $body);
-      $body = str_replace('<div class="detailInfo__detailWebform">                                                    </div>', '', $body);
-      $body = str_replace('class="detailInfo__detailText detailText"', '', $body);
-      $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
-      $body = str_replace('<body>', '', $body);
-      $body = str_replace('</body>', '', $body);
-      $body = str_replace('<html>', '', $body);
-      $body = str_replace('</html>', '', $body);
+//      $body = html_entity_decode($body);
+//      $body = str_replace('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">', '', $body);
+//      $body = str_replace('<div class="detailInfo__detailWebform">                                                    </div>', '', $body);
+//      $body = str_replace('class="detailInfo__detailText detailText"', '', $body);
+//      $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
+//      $body = str_replace('<body>', '', $body);
+//      $body = str_replace('</body>', '', $body);
+//      $body = str_replace('<html>', '', $body);
+//      $body = str_replace('</html>', '', $body);
 
       // Remove all links from text.
-      for ($i = 0; $i < 30; $i++) {
-        $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);
-      }
+//      for ($i = 0; $i < 30; $i++) {
+/*        $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);*/
+//      }
 
-      $node->body->value = $body;
-      $node->body->format = 'full_html';
-      $node->save();
+//      $node->body->value = $body;
+//      $node->body->format = 'full_html';
+//      $node->save();
     }
 
     $ru = $node->getTranslationStatus('ru');

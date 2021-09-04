@@ -35,7 +35,7 @@ class PostprocessNodes extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('book_importer.translator'),
+      $container->get('book_importer.nodejs_translator'),
     );
   }
 
@@ -115,45 +115,46 @@ class PostprocessNodes extends FormBase {
       return;
     }
 
-    $en = $node->getTranslationStatus('en');
-    $es = $node->getTranslationStatus('es');
-    $ru = $node->getTranslationStatus('ru');
+//    $en = $node->getTranslationStatus('en');
+//    $es = $node->getTranslationStatus('es');
+//    $ru = $node->getTranslationStatus('ru');
 
     // UTF-8 decode for Russian language.
     $body = $node->body->value;
-    $body = html_entity_decode($body);
-    $body = str_replace('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">', '', $body);
-    $body = str_replace('<div class="detailInfo__detailWebform">                                                    </div>', '', $body);
-    $body = str_replace('class="detailInfo__detailText detailText"', '', $body);
-    $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
-    $body = str_replace('</body>', '', $body);
-    $body = str_replace('<html>', '', $body);
-    $body = str_replace('</html>', '', $body);
+//    $body = html_entity_decode($body);
+//    $body = str_replace('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">', '', $body);
+//    $body = str_replace('<div class="detailInfo__detailWebform">                                                    </div>', '', $body);
+//    $body = str_replace('class="detailInfo__detailText detailText"', '', $body);
+//    $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
+    $body = str_replace('<body>', '', $body);
+//    $body = str_replace('</body>', '', $body);
+//    $body = str_replace('<html>', '', $body);
+//    $body = str_replace('</html>', '', $body);
 
     // Remove all links from text.
-    for ($i = 0; $i < 30; $i++) {
-      $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);
-    }
+//    for ($i = 0; $i < 30; $i++) {
+/*      $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);*/
+//    }
 
     $node->body->value = $body;
     $node->body->format = 'full_html';
     $node->save();
 
-    if (!empty($ru) && !empty($en)) {
-      $translated_entity = $node->getTranslation('en');
+//    if (!empty($ru) && !empty($en)) {
+//      $translated_entity = $node->getTranslation('en');
 
       // Translate tags.
-      $tags = $node->field_tags->getValue();
-      $translated_entity->field_tags->setValue($tags);
+//      $tags = $node->field_tags->getValue();
+//      $translated_entity->field_tags->setValue($tags);
 
       // Remove unused HTML.
-      $body = $translated_entity->body->value;
-      $translated_entity->body->value = $body;
-      $translated_entity->body->format = 'full_html';
+//      $body = $translated_entity->body->value;
+//      $translated_entity->body->value = $body;
+//      $translated_entity->body->format = 'full_html';
 
 
-      $translated_entity->save();
-    }
+//      $translated_entity->save();
+//    }
 
 //    if (!empty($ru) && !empty($es)) {
 //      $translated_entity = $node->getTranslation('es');
