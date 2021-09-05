@@ -18,3 +18,7 @@ services:
     class: \Drupal\book_importer\Commands\SingleTranslateCommand
     tags:
       - { name: drush.command }
+  book_importer.multiple_translate:
+    class: \Drupal\book_importer\Commands\MultipleTranslateCommand
+    tags:
+      - { name: drush.command }

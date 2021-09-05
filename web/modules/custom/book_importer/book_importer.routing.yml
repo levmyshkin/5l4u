@@ -27,7 +27,7 @@ book_importer.translate_terms:
 
 
 book_importer.translate_nodes:
-    path: '/admin/content/translate-nodes'
+  path: '/admin/content/translate-nodes'
   defaults:
     _form: '\Drupal\book_importer\Form\TranslateNodes'
     _title: 'Translate Nodes'

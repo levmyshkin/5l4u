@@ -52,13 +52,22 @@ class NodejsTranslator {
     }
     $translated_text = str_replace(' / ', '/', $translated_text);
     $translated_text = str_replace('/ ', '/', $translated_text);
+
     $translated_text = str_replace('0 -0', '0-0', $translated_text);
+    $translated_text = str_replace('-04 -', '-04-', $translated_text);
+    $translated_text = str_replace('2021 -0', '2021-0', $translated_text);
+
+    // Remove spaces from src attribute.
+//    $translated_text = preg_replace('/src\s*=\s*"[^" ]*\K\h|(?!^)\G[^" ]*\K\h/gm', '', $translated_text);
+
+
     $translated_text = str_replace(' .png', '.png', $translated_text);
     $translated_text = str_replace('. png', '.png', $translated_text);
     $translated_text = str_replace(' .jpg', '.jpg', $translated_text);
     $translated_text = str_replace('. jpg', '.jpg', $translated_text);
 
     $translated_text = str_replace('/content /', '/content/', $translated_text);
+    $translated_text = str_replace('/files /', '/files/', $translated_text);
 
     $translated_text = str_replace('alt = "', '" alt="', $translated_text);
     $translated_text = str_replace('alt ="', '" alt="', $translated_text);
