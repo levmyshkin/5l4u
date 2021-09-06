@@ -115,9 +115,11 @@ class PostprocessNodes extends FormBase {
       return;
     }
 
-//    $en = $node->getTranslationStatus('en');
-//    $es = $node->getTranslationStatus('es');
-//    $ru = $node->getTranslationStatus('ru');
+    $post_process = \Drupal::service('book_importer.post_process');
+
+    $en = $node->getTranslationStatus('en');
+    $es = $node->getTranslationStatus('es');
+    $ru = $node->getTranslationStatus('ru');
 
     // UTF-8 decode for Russian language.
     $body = $node->body->value;
@@ -126,56 +128,61 @@ class PostprocessNodes extends FormBase {
 //    $body = str_replace('<div class="detailInfo__detailWebform">                                                    </div>', '', $body);
 //    $body = str_replace('class="detailInfo__detailText detailText"', '', $body);
 //    $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
-    $body = str_replace('<body>', '', $body);
+//    $body = str_replace('<body>', '', $body);
 //    $body = str_replace('</body>', '', $body);
 //    $body = str_replace('<html>', '', $body);
 //    $body = str_replace('</html>', '', $body);
+    // Remove multiple spaces.
+    //     $body = preg_replace('!\s+!', ' ', $body);
 
     // Remove all links from text.
 //    for ($i = 0; $i < 30; $i++) {
 /*      $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);*/
 //    }
 
+
+    $body = $post_process->processText($body);
     $node->body->value = $body;
     $node->body->format = 'full_html';
     $node->save();
 
-//    if (!empty($ru) && !empty($en)) {
-//      $translated_entity = $node->getTranslation('en');
+    if (!empty($ru) && !empty($en)) {
+      $translated_entity = $node->getTranslation('en');
 
       // Translate tags.
 //      $tags = $node->field_tags->getValue();
 //      $translated_entity->field_tags->setValue($tags);
 
       // Remove unused HTML.
-//      $body = $translated_entity->body->value;
-//      $translated_entity->body->value = $body;
-//      $translated_entity->body->format = 'full_html';
+      $body = $translated_entity->body->value;
+      $body = $post_process->processText($body);
+      $translated_entity->body->value = $body;
+      $translated_entity->body->format = 'full_html';
 
+      $translated_entity->save();
+    }
 
-//      $translated_entity->save();
-//    }
-
-//    if (!empty($ru) && !empty($es)) {
-//      $translated_entity = $node->getTranslation('es');
+    if (!empty($ru) && !empty($es)) {
+      $translated_entity = $node->getTranslation('es');
 
       // Translate tags.
 //      $tags = $node->field_tags->getValue();
 //      $translated_entity->field_tags->setValue($tags);
 
       // Remove unused HTML.
-//      $body = $translated_entity->body->value;
+      $body = $translated_entity->body->value;
 //      $body = str_replace('<div class="detailInfo__detailWebform"><a name="webform"></a></div>', '', $body);
 //      $body = str_replace('<!DOCTYPE html><html><head></head><body>', '', $body);
 //      $body = str_replace('</body></html>', '', $body);
 //      for ($i = 0; $i < 30; $i++) {
 /*        $body = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $body);*/
 //      }
-//      $translated_entity->body->value = $body;
-//      $translated_entity->body->format = 'full_html';
+      $body = $post_process->processText($body);
+      $translated_entity->body->value = $body;
+      $translated_entity->body->format = 'full_html';
 
-//      $translated_entity->save();
-//    }
+      $translated_entity->save();
+    }
 
     $context['results'][] = 'Processed node: ' . $node->id();
     $context['sandbox']['current_id'] = $node->id();

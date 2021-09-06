@@ -14,6 +14,9 @@ services:
   book_importer.nodejs_translator:
     class: Drupal\book_importer\NodejsTranslator
     arguments: ['@http_client_factory']
+  book_importer.post_process:
+    class: Drupal\book_importer\PostProcess
+    arguments: []
   book_importer.single_translate:
     class: \Drupal\book_importer\Commands\SingleTranslateCommand
     tags:

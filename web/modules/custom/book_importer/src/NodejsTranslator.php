@@ -47,51 +47,12 @@ class NodejsTranslator {
     $translated_text = '';
     foreach ($chunks as $chunk) {
       $translated_text .= $this->getTranslation($chunk, $from, $to);
-      $random_time = rand(25, 35);
+      $random_time = rand(24, 34);
       sleep($random_time);
     }
-    $translated_text = str_replace(' / ', '/', $translated_text);
-    $translated_text = str_replace('/ ', '/', $translated_text);
 
-    $translated_text = str_replace('0 -0', '0-0', $translated_text);
-    $translated_text = str_replace('-04 -', '-04-', $translated_text);
-    $translated_text = str_replace('2021 -0', '2021-0', $translated_text);
-
-    // Remove spaces from src attribute.
-//    $translated_text = preg_replace('/src\s*=\s*"[^" ]*\K\h|(?!^)\G[^" ]*\K\h/gm', '', $translated_text);
-
-
-    $translated_text = str_replace(' .png', '.png', $translated_text);
-    $translated_text = str_replace('. png', '.png', $translated_text);
-    $translated_text = str_replace(' .jpg', '.jpg', $translated_text);
-    $translated_text = str_replace('. jpg', '.jpg', $translated_text);
-
-    $translated_text = str_replace('/content /', '/content/', $translated_text);
-    $translated_text = str_replace('/files /', '/files/', $translated_text);
-
-    $translated_text = str_replace('alt = "', '" alt="', $translated_text);
-    $translated_text = str_replace('alt ="', '" alt="', $translated_text);
-    $translated_text = str_replace('alt= "', '" alt="', $translated_text);
-
-    $translated_text = str_replace('title = "', ' title="', $translated_text);
-    $translated_text = str_replace('title ="', ' title="', $translated_text);
-    $translated_text = str_replace('title= "', ' title="', $translated_text);
-
-    $translated_text = str_replace('src = "', ' src="', $translated_text);
-    $translated_text = str_replace('src ="', ' src="', $translated_text);
-    $translated_text = str_replace('src= "', ' src="', $translated_text);
-
-    $translated_text = str_replace('class = "', ' class="', $translated_text);
-    $translated_text = str_replace('class= "', ' class="', $translated_text);
-    $translated_text = str_replace('class ="', ' class="', $translated_text);
-
-    $translated_text = str_replace('id = "', ' class="', $translated_text);
-    $translated_text = str_replace('id= "', ' class="', $translated_text);
-    $translated_text = str_replace('id ="', ' class="', $translated_text);
-
-    $translated_text = str_replace('data-entity-uuid = "', ' data-entity-uuid="', $translated_text);
-    $translated_text = str_replace('data-entity-uuid= "', ' data-entity-uuid="', $translated_text);
-    $translated_text = str_replace('data-entity-uuid ="', ' data-entity-uuid="', $translated_text);
+    $post_process = \Drupal::service('book_importer.post_process');
+    $translated_text = $post_process->processText($translated_text);
 
     return $translated_text;
   }
