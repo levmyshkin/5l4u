@@ -1,2 +1,3 @@
-bober.ru, 5l4u.ru, beget-1 - IN PROGRESS
-favot.ru, Nope, Nope - WAITING FOR PARSING
+Source, Spider name, Local site, Global site, Hosting - Status
+bober.ru, bober, book-base, 5l4u.ru, beget-1 - IN PROGRESS
+favot.ru, Nope, Nope, Nope, Nope - WAITING FOR PARSING
