@@ -1,0 +1,55 @@
+&nbsp; replace with space
+
+detailInfo__detailWebform remove unused classes
+
+1.   Grab CSV
+2.   Prepare CSV
+3.   Import CSV - Add url
+4.   Translate Terms - Add url
+5.   Remove all mentions for old site - awk command
+5.1. Put watermark with new site logo - Find a way
+6.   (Optional) Fix 404 errors with LinkChecker
+6.1. (Optional) Create redirects from old URLs to new pages in English
+7.   Register domain
+8.   Set up google analytics
+9.   Set up Google adsense
+10.  Generate site with HTTrack
+11.  Deploy site on hosting
+12.  Waiting for Google Adsense verification
+13.  Test Ads and Stats.
+
+
+Remove lines from CSV file with the text:
+awk '!/Лунный календарь./' file-all.csv > tmpfile && mv tmpfile file-all.csv
+
+"Тест:
+"ТЕСТ
+"ТЕСТ:
+"Гороскоп потребителя и ежедневные скидки.
+"Лунный календарь садовода.
+"Лунный календарь на
+"Лунный календарь.
+
+
+Remove this code from CSV files without removing entire line:
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> - Remove
+<html> -remove
+</html>
+<body>
+</body>
+
+prepare absolute urls instead of relative (skip - All links in content will be deleted via code)
+remove all Source site mentions
+
+html_entity_decode (skip - will be decoded via code):
+&#1083;&#1077;&#1082;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1084; &#1080; &#1087;&#1088;&#1080; - change to russian chars
+
+
+UA-205884857-1 - GA code
+v=spf1 redirect=beget.com google-site-verification=5yDif0Hx0pHPRno55O1fmeqbrbEWfIax-J8to5P1_DY - Verify google Search console
+
+httrack https://5l4u.com -O output_dir --disable-security-limits --max-rate=99999999999 -K3 -X -%P -wqQ%v --robots=0 -N "%h%p/%n.%t" - create HTML version of the site with HTTrack
+
+drush book_importer:single_translate 5371 - Drush command to translate one node
+drush book_importer:multiple_translate - Translate all nodes
+
