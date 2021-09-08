@@ -53,6 +53,7 @@
     "drupal/image_effects": "^3.1",
     "drupal/imageapi_optimize": "^4.0",
     "drupal/imageapi_optimize_resmushit": "^2.0",
+    "drupal/language_access": "^1.6",
     "drupal/languageicons": "^1.0@beta",
     "drupal/libraries": "^3.0@beta",
     "drupal/linkchecker": "^1.0@beta",
