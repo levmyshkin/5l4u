@@ -1,5 +1,22 @@
 @todo Add readme about how to add Scrapy spider
 
+Create a new Spider:
+scrapy startproject [name]
+(Note: spider name should be different from project name).
+
+Add settings in [project_name]/[project_name]/settings.py:
+FEED_EXPORTERS = {
+    'csv': 'favot.exporters.QuoteAllCsvItemExporter',
+}
+
+Add exporters.py file for CSV export.
+
+
+Parsing:
+export PATH="${PATH}:${HOME}/.local/bin"
+scrapy runspider spiders/[spider_name].py -o file-all.csv -t csv
+
+
 1.   Grab CSV
 2.   Prepare CSV
 3.   Import CSV - Add url
@@ -19,9 +36,6 @@
 13.  Waiting for Google Adsense verification
 14.  Test Ads and Stats.
 
-Parsing:
-export PATH="${PATH}:${HOME}/.local/bin"
-scrapy runspider spiders/bober.py -o file-all.csv -t csv
 
 
 Remove this code from CSV files without removing entire line:
