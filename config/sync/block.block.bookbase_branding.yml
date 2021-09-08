@@ -1,0 +1,25 @@
+uuid: eff01198-1fdb-45b6-ac74-467334c3d41d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bookbase
+_core:
+  default_config_hash: sO-8gstUuyOf1JDysex2uxTk9dae0DmdClvExD0VcsM
+id: bookbase_branding
+theme: bookbase
+region: site_brand
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

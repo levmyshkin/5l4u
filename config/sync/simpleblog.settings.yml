@@ -1,0 +1,22 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 0
+logo:
+  use_default: 0
+  path: themes/custom/html5up/logo.svg
+favicon:
+  use_default: 0
+  path: ''
+grid_view: 1
+show: 0
+copyright: '5 LIFE HACKS 4 YOU! © '
+drupal: ''
+facebook: ''
+instagram: ''
+twitter: ''
+googleplus: ''
+_core:
+  default_config_hash: nRsSGn5tRBqlxeLTK3qJ5GhMRn-Sx6XF4ayqswmxndM
+image: {  }

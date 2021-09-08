@@ -1,0 +1,27 @@
+uuid: e80c5337-0719-4df5-8c64-54f5650fb38c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - simpleblog
+_core:
+  default_config_hash: k60TNhTTk73gmAgY-GmSVAfIhsbBucPa__VDUT2I1Uo
+id: simpleblog_footer
+theme: simpleblog
+region: footer_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer Menu'
+  provider: system
+  label_display: '1'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

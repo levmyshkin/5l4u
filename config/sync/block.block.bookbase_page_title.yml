@@ -1,0 +1,20 @@
+uuid: f020d851-0044-44af-9a27-8d9228ea7222
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bookbase
+_core:
+  default_config_hash: nF5_aqo8Ucxu2uxixzYTDKXaEWLURyTu0HjNuL52aSQ
+id: bookbase_page_title
+theme: bookbase
+region: title
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

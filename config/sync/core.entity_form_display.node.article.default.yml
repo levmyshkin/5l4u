@@ -65,19 +65,16 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     weight: 14
-    settings: {  }
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   field_tags:
-    type: entity_reference_autocomplete_tags
+    type: options_buttons
     weight: 3
     region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
+    settings: {  }
     third_party_settings: {  }
   field_yoast_seo:
     weight: 17

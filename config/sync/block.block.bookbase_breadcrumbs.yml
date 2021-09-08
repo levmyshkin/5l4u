@@ -1,0 +1,22 @@
+uuid: 731b63ca-d173-4734-83de-19cbe6c9bc9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bookbase
+_core:
+  default_config_hash: 75wDkdzWdZS0_uYam2yJljeZJDHzRX-WNECDk8BGo04
+id: bookbase_breadcrumbs
+theme: bookbase
+region: breadcrumb
+weight: 50
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

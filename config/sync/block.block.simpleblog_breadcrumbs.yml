@@ -1,0 +1,22 @@
+uuid: f865cc74-d859-46e0-b0a9-d5404b7a35e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - simpleblog
+_core:
+  default_config_hash: 75wDkdzWdZS0_uYam2yJljeZJDHzRX-WNECDk8BGo04
+id: simpleblog_breadcrumbs
+theme: simpleblog
+region: breadcrumb
+weight: 50
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

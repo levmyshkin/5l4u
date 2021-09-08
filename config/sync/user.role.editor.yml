@@ -11,6 +11,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access in-place editing'
+  - 'access language ru'
   - 'access site in maintenance mode'
   - 'access taxonomy overview'
   - 'access toolbar'

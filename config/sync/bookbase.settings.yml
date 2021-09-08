@@ -1,0 +1,19 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 0
+  path: themes/custom/html5up/logo.svg
+favicon:
+  use_default: 1
+grid_view: 1
+show: 0
+image: {  }
+copyright: '5 Life Hacks 4 You! © 2021'
+drupal: ''
+facebook: ''
+instagram: ''
+twitter: ''
+googleplus: ''

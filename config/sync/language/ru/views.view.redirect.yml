@@ -37,7 +37,10 @@ display:
           expose:
             label: Кому
         status_code:
+          expose:
+            label: 'Код состояния'
           group_info:
+            label: 'Код состояния'
             group_items:
               1:
                 title: '300 Множество Выборов'

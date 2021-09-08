@@ -1,0 +1,22 @@
+uuid: 5f323a27-c5e5-4a37-ba6b-442c2ecb5e26
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bookbase
+_core:
+  default_config_hash: dTU2Sreq9kItlDzwjMRKPQGgkBD-WHSRED5s9X-FWis
+id: bookbase_status_messages
+theme: bookbase
+region: highlighted
+weight: 60
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

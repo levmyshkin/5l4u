@@ -1,0 +1,20 @@
+uuid: f97876df-a968-48f4-a2e6-e6862186c759
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bookbase
+_core:
+  default_config_hash: 76le4gpbxIDla77EZ6bRp0nuhD4WtnuIPudX81UyEMk
+id: bookbase_local_actions
+theme: bookbase
+region: help
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -3,6 +3,9 @@ module:
   admin_toolbar_tools: 0
   adsense: 0
   adsense_adstxt: 0
+  advagg: 0
+  advagg_css_minify: 0
+  advagg_js_minify: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -16,30 +19,42 @@ module:
   contextual: 0
   ctools: 0
   datetime: 0
+  dblog: 0
+  dynamic_entity_reference: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
+  extra_css_js: 0
   field: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
+  file_mdm_exif: 0
+  file_mdm_font: 0
   filter: 0
   google_analytics: 0
   help: 0
   history: 0
   hreflang: 0
   image: 0
+  image_effects: 0
   imageapi_optimize: 0
   imageapi_optimize_resmushit: 0
   language: 0
+  language_access: 0
   languageicons: 0
   libraries: 0
   link: 0
+  linkchecker: 0
   linkit: 0
   locale: 0
   media: 0
   media_library: 0
   menu_ui: 0
   metatag: 0
+  metatag_facebook: 0
+  metatag_open_graph: 0
+  metatag_twitter_cards: 0
   metatag_views: 0
   migrate: 0
   migrate_media_handler: 0
@@ -49,6 +64,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  pathologic: 0
   quickedit: 0
   rdf: 0
   redirect: 0
@@ -82,6 +98,8 @@ theme:
   bartik: 0
   seven: 0
   html5up: 0
+  simpleblog: 0
+  bookbase: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

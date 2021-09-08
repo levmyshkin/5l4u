@@ -1,0 +1,22 @@
+uuid: b7cc8d9d-7717-484a-ade3-5d934de371e1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bookbase
+_core:
+  default_config_hash: AePks-fwbScpOJRWURNL3eMTnH6q5K56_W_J-qTEAtc
+id: bookbase_local_tasks
+theme: bookbase
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

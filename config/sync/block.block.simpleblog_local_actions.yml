@@ -1,0 +1,20 @@
+uuid: fdcf047f-687d-448a-ad00-aa2c5e74ad13
+langcode: en
+status: true
+dependencies:
+  theme:
+    - simpleblog
+_core:
+  default_config_hash: 76le4gpbxIDla77EZ6bRp0nuhD4WtnuIPudX81UyEMk
+id: simpleblog_local_actions
+theme: simpleblog
+region: help
+weight: 20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

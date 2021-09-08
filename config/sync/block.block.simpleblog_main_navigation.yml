@@ -1,0 +1,27 @@
+uuid: cbe0d505-a956-431d-9042-0ead5faa9800
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - simpleblog
+_core:
+  default_config_hash: IafrsBw6GUfshOmS3sLGoFfhDYwCT0yfMVwkO2zCN6o
+id: simpleblog_main_navigation
+theme: simpleblog
+region: main_navigation
+weight: 10
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

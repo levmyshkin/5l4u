@@ -1,0 +1,27 @@
+uuid: 4c205fa1-9f60-4e5a-8247-337e924a6fc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - bookbase
+_core:
+  default_config_hash: k60TNhTTk73gmAgY-GmSVAfIhsbBucPa__VDUT2I1Uo
+id: bookbase_footer
+theme: bookbase
+region: footer_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer Menu'
+  provider: system
+  label_display: '1'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

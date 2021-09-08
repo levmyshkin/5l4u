@@ -24,8 +24,6 @@ display:
           tags:
             previous: '‹ Предыдущий'
             next: 'Следующий ›'
-            first: '« Первая'
-            last: 'Последняя »'
     display_title: Основной
   feed_1:
     display_title: 'Поток данных'

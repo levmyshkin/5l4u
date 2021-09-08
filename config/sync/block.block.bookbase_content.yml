@@ -1,0 +1,22 @@
+uuid: 72df81eb-c20f-47e2-b220-892f35dd1ff9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bookbase
+_core:
+  default_config_hash: unSBuldrU5BY7HfI7l5BrpMWazqQauq_6p0aAQ2krJU
+id: bookbase_content
+theme: bookbase
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

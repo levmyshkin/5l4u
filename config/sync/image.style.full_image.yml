@@ -1,8 +1,22 @@
 uuid: d0b1c628-7076-41ac-ab35-71b1ab8d2c54
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 name: full_image
 label: 'Full image'
-effects: {  }
+effects:
+  115ba3d2-37a2-45d4-bb9a-706105341075:
+    uuid: 115ba3d2-37a2-45d4-bb9a-706105341075
+    id: image_effects_watermark
+    weight: 2
+    data:
+      watermark_image: sites/default/files/watermark.png
+      watermark_width: 20%
+      watermark_height: 20%
+      placement: right-top
+      x_offset: ''
+      y_offset: ''
+      opacity: 100
 pipeline: resmush_it

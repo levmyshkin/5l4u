@@ -1,0 +1,22 @@
+uuid: 8b6bde22-c4d3-4ee3-a655-c5c46c744849
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - simpleblog
+_core:
+  default_config_hash: dTU2Sreq9kItlDzwjMRKPQGgkBD-WHSRED5s9X-FWis
+id: simpleblog_status_messages
+theme: simpleblog
+region: highlighted
+weight: 60
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

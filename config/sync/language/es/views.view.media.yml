@@ -1,12 +1,47 @@
+label: Multimedia
 display:
   default:
+    display_title: Máster
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+          tags:
+            first: '« Primero'
+            last: 'Último »'
       fields:
+        thumbnail__target_id:
+          separator: ', '
+        name:
+          separator: ', '
         bundle:
           label: Tipo
+          separator: ', '
+        uid:
+          separator: ', '
         status:
           label: Estado
+          separator: ', '
+        changed:
+          separator: ', '
+        operations:
+          label: Operaciones
       filters:
         bundle:
           expose:
             label: Tipo
+      title: Multimedia
+  media_page_list:
+    display_title: Multimedia
+    display_options:
+      menu:
+        title: Multimedia

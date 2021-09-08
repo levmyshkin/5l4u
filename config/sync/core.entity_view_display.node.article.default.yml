@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.article.field_yoast_seo
     - node.type.article
   module:
+    - image
     - metatag
     - text
     - user
@@ -25,13 +26,29 @@ mode: default
 content:
   body:
     type: text_default
-    weight: 1
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
     label: hidden
+  field_hero_image:
+    type: image_url
+    weight: 6
+    region: content
+    label: above
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_url
+    weight: 5
+    region: content
+    label: above
+    settings:
+      image_style: ''
+    third_party_settings: {  }
   field_meta_tags:
-    weight: 4
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -39,14 +56,14 @@ content:
     region: content
   field_tags:
     type: entity_reference_label
-    weight: 2
+    weight: 1
     region: content
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
   field_yoast_seo:
-    weight: 6
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -63,12 +80,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 3
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_article_type: true
-  field_hero_image: true
-  field_image: true
   langcode: true

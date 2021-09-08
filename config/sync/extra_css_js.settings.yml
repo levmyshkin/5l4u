@@ -1,0 +1,9 @@
+extra_css_js_custom_css: ".viqeo-embed {\r\n  display: none;\r\n}\r\n"
+extra_css_js_custom_js: ''
+extra_css_js_themes:
+  stable: stable
+  bartik: bartik
+  seven: seven
+  classy: classy
+  simpleblog: simpleblog
+  html5up: html5up

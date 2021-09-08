@@ -7,6 +7,7 @@ _core:
 id: front
 label: 'Front page'
 tags:
-  description: 'This is DrupalBook, another one manual for Drupal development. I decided to write this manual, because many other books and sites about Drupal are too complicated for understanding.'
-  canonical_url: '[site:url]'
+  title: 'LIFE HACKS FOR EVERYDAY! | 5 LIFE HACKS FOR YOU!'
   shortlink: '[site:url]'
+  description: '5L4U.com helps to make your life easier!'
+  canonical_url: '[site:url]'

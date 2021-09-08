@@ -1,0 +1,22 @@
+uuid: d8063ed1-32a7-42d1-8662-9e5ff7214433
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - simpleblog
+_core:
+  default_config_hash: unSBuldrU5BY7HfI7l5BrpMWazqQauq_6p0aAQ2krJU
+id: simpleblog_content
+theme: simpleblog
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
