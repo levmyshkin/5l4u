@@ -19,6 +19,8 @@ display:
             first: '« Primero'
             last: 'Último »'
       fields:
+        media_bulk_form:
+          action_title: Acción
         thumbnail__target_id:
           separator: ', '
         name:

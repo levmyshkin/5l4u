@@ -10,6 +10,7 @@ dependencies:
     - node
     - text
     - user
+    - views_bulk_operations
 id: translations
 label: Translations
 module: views
@@ -76,14 +77,14 @@ display:
       row:
         type: fields
       fields:
-        node_bulk_form:
-          id: node_bulk_form
-          table: node
-          field: node_bulk_form
+        views_bulk_operations_bulk_form:
+          id: views_bulk_operations_bulk_form
+          table: views
+          field: views_bulk_operations_bulk_form
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Node operations bulk form'
+          label: 'Views bulk operations'
           exclude: false
           alter:
             alter_text: false
@@ -124,12 +125,17 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
+          batch: true
+          batch_size: 10
+          form_step: true
+          buttons: false
+          clear_on_exposed: true
           action_title: Action
-          include_exclude: include
           selected_actions:
-            - node_delete_action
-          entity_type: node
-          plugin_id: node_bulk_form
+            9:
+              action_id: views_bulk_operations_delete_entity
+          force_selection_info: false
+          plugin_id: views_bulk_operations_bulk_form
         title:
           id: title
           table: node_field_data

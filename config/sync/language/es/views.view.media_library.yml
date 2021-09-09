@@ -17,10 +17,15 @@ display:
           tags:
             previous: ‹‹
             next: ››
+      fields:
+        media_bulk_form:
+          action_title: Acción
       title: Multimedia
   page:
     display_title: Página
     display_options:
       fields:
+        media_bulk_form:
+          action_title: Acción
         name:
           separator: ', '
