@@ -41,8 +41,9 @@
     "drupal/adsense": "^1.2",
     "drupal/advagg": "^4.1",
     "drupal/console": "~1.0",
-    "drupal/core-composer-scaffold": "^9.1",
-    "drupal/core-recommended": "^8.9.16",
+    "drupal/core-composer-scaffold": "^9",
+    "drupal/core-project-message": "^9",
+    "drupal/core-recommended": "^9",
     "drupal/ctools": "^3.6",
     "drupal/disqus": "^1.x-dev",
     "drupal/easy_breadcrumb": "^1.12",
@@ -68,11 +69,11 @@
     "drupal/simpleblog": "^2.0",
     "drupal/taxonomy_menu": "^3.x-dev",
     "drupal/twig_tweak": "^2.9",
-    "drupal/upgrade_status": "^3.4",
+    "drupal/upgrade_status": "^3.17",
     "drupal/views_bulk_operations": "^4.0",
     "drupal/views_infinite_scroll": "^1.8",
     "drupal/yoast_seo": "^1.5",
-    "drush/drush": "^9.2",
+    "drush/drush": "^10.0",
     "vlucas/phpdotenv": "^2.4",
     "webflo/drupal-finder": "^1.0.0",
     "webmozart/path-util": "^2.3"
@@ -89,7 +90,8 @@
       "composer/installers": true,
       "drupal/core-composer-scaffold": true,
       "drupal/console-extend-plugin": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "drupal/core-project-message": true
     }
   },
   "autoload": {
@@ -143,6 +145,6 @@
     }
   },
   "require-dev": {
-    "drupal/core-dev": "8.9.16"
+    "drupal/core-dev": "^9"
   }
 }
