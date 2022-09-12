@@ -45,6 +45,7 @@ class TranslateNodes extends FormBase {
    * @return array
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    // @todo move languages in configuration form.
     $content = '<table><tr><th>Russian</th><th>English</th><th>Spanish</th></tr>';
     $query = \Drupal::entityQuery('node');
     $query->condition('type', "article");

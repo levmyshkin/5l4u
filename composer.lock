@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "157c7db53a4f7a9346a76483f50035fe",
+    "content-hash": "49ff3a56aab3b0fdddba1e7ea44fbade",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3271,6 +3271,90 @@
             }
         },
         {
+            "name": "drupal/jquery_ui",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/jquery_ui.git",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/jquery_ui-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "64c19ecc8902e2b4b1ab0cc5f5fe28dbc83bfebe"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1582149957",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "RobLoach",
+                    "homepage": "https://www.drupal.org/user/61114"
+                },
+                {
+                    "name": "bnjmnm",
+                    "homepage": "https://www.drupal.org/user/2369194"
+                },
+                {
+                    "name": "jjeff",
+                    "homepage": "https://www.drupal.org/user/17190"
+                },
+                {
+                    "name": "lauriii",
+                    "homepage": "https://www.drupal.org/user/1078742"
+                },
+                {
+                    "name": "litwol",
+                    "homepage": "https://www.drupal.org/user/78134"
+                },
+                {
+                    "name": "mfb",
+                    "homepage": "https://www.drupal.org/user/12302"
+                },
+                {
+                    "name": "mfer",
+                    "homepage": "https://www.drupal.org/user/25701"
+                },
+                {
+                    "name": "mikelutz",
+                    "homepage": "https://www.drupal.org/user/2972409"
+                },
+                {
+                    "name": "sun",
+                    "homepage": "https://www.drupal.org/user/54136"
+                },
+                {
+                    "name": "webchick",
+                    "homepage": "https://www.drupal.org/user/24967"
+                },
+                {
+                    "name": "zrpnr",
+                    "homepage": "https://www.drupal.org/user/1448368"
+                }
+            ],
+            "description": "Provides jQuery UI library.",
+            "homepage": "https://www.drupal.org/project/jquery_ui",
+            "support": {
+                "source": "https://git.drupalcode.org/project/jquery_ui"
+            }
+        },
+        {
             "name": "drupal/language_access",
             "version": "1.7.0",
             "source": {
@@ -4150,6 +4234,91 @@
             "homepage": "https://www.drupal.org/project/simpleblog",
             "support": {
                 "source": "https://git.drupalcode.org/project/simpleblog"
+            }
+        },
+        {
+            "name": "drupal/taxonomy_manager",
+            "version": "2.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/taxonomy_manager.git",
+                "reference": "2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/taxonomy_manager-2.0.7.zip",
+                "reference": "2.0.7",
+                "shasum": "3f89af2a9581334634f2d41f4459c75076059b80"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/jquery_ui": "^1.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.7",
+                    "datestamp": "1652326645",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Andriy Khomych",
+                    "homepage": "https://www.drupal.org/user/3287133"
+                },
+                {
+                    "name": "JacobSanford",
+                    "homepage": "https://www.drupal.org/user/806538"
+                },
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                },
+                {
+                    "name": "alesbencina",
+                    "homepage": "https://www.drupal.org/user/3558110"
+                },
+                {
+                    "name": "aurelianzaha",
+                    "homepage": "https://www.drupal.org/user/3575026"
+                },
+                {
+                    "name": "dragan_bp",
+                    "homepage": "https://www.drupal.org/user/3578037"
+                },
+                {
+                    "name": "joaogarin",
+                    "homepage": "https://www.drupal.org/user/612814"
+                },
+                {
+                    "name": "kalinchernev",
+                    "homepage": "https://www.drupal.org/user/231185"
+                },
+                {
+                    "name": "klausi",
+                    "homepage": "https://www.drupal.org/user/262198"
+                },
+                {
+                    "name": "mh86",
+                    "homepage": "https://www.drupal.org/user/59747"
+                }
+            ],
+            "description": "This module provides a powerful interface for managing taxonomies.",
+            "homepage": "https://www.drupal.org/project/taxonomy_manager",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/taxonomy_manager",
+                "issues": "https://www.drupal.org/project/issues/taxonomy_manager"
             }
         },
         {

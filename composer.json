@@ -67,6 +67,7 @@
     "drupal/responsive_favicons": "^1.4",
     "drupal/simple_sitemap": "^3.3",
     "drupal/simpleblog": "^2.0",
+    "drupal/taxonomy_manager": "^2.0",
     "drupal/taxonomy_menu": "^3.x-dev",
     "drupal/twig_tweak": "^2.9",
     "drupal/upgrade_status": "^3.17",
