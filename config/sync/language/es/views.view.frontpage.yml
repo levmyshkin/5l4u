@@ -1,9 +1,13 @@
 display:
   default:
+    display_title: 'Por defecto'
     display_options:
-      empty:
-        area_text_custom:
-          content: 'No front page content has been created yet.'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
       exposed_form:
         options:
           submit_button: Aplicar
@@ -11,12 +15,8 @@ display:
           exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Elementos por página'
-            items_per_page_options_all_label: '- Todo -'
-            offset_label: Desplazamiento
-    display_title: Máster
+      empty:
+        area_text_custom:
+          content: 'No front page content has been created yet.'
   page_1:
     display_title: Página

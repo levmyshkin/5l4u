@@ -1,7 +1,10 @@
 display:
   default:
-    display_title: Máster
+    display_title: 'Por defecto'
     display_options:
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Aplicar
@@ -9,7 +12,4 @@ display:
           exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
-      fields:
-        changed:
-          separator: ', '
       use_more_text: Más

@@ -1,15 +1,15 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: en
 uuid: 34bbbe0d-c980-4335-a003-a7ba653cf26c
-name: '5 LIFE HACKS FOR YOU!'
+name: 'Fairy tales'
 mail: levmyshkin89@gmail.com
-slogan: 'LIFE HACKS FOR EVERYDAY!'
+slogan: 'Fairy tales'
 page:
   403: /node/1640
   404: /node/1641
   front: /node
 admin_compact_mode: false
 weight_select_max: 100
-langcode: en
 default_langcode: en
-_core:
-  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
 mail_notification: ''

@@ -1,17 +1,7 @@
 display:
   default:
+    display_title: 'Por defecto'
     display_options:
-      exposed_form:
-        options:
-          reset_button_label: Restablecer
-          exposed_sorts_label: 'Ordenar por'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        options:
-          tags:
-            first: '« Primero'
-            last: 'Último »'
       fields:
         title:
           label: Título
@@ -21,6 +11,17 @@ display:
           label: Estado
         operations:
           label: Operaciones
+      pager:
+        options:
+          tags:
+            first: '« Primero'
+            last: 'Último »'
+      exposed_form:
+        options:
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       filters:
         title:
           expose:
@@ -28,6 +29,5 @@ display:
         status:
           expose:
             label: Estado
-    display_title: Máster
   page_1:
     display_title: Página

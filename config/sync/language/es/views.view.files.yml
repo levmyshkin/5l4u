@@ -1,19 +1,7 @@
 display:
   default:
-    display_title: Máster
+    display_title: 'Por defecto'
     display_options:
-      exposed_form:
-        options:
-          reset_button_label: Restablecer
-          exposed_sorts_label: 'Ordenar por'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Elementos por página'
-            items_per_page_options_all_label: '- Todo -'
-            offset_label: Desplazamiento
       fields:
         filename:
           separator: ', '
@@ -21,6 +9,18 @@ display:
           label: Tamaño
         status:
           label: Estado
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+      exposed_form:
+        options:
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       filters:
         filename:
           expose:
@@ -30,14 +30,14 @@ display:
             label: Estado
   page_2:
     display_options:
+      fields:
+        entity_label:
+          label: Entidad
+        type:
+          label: 'Tipo de entidad'
       pager:
         options:
           expose:
             items_per_page_label: 'Elementos por página'
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
-      fields:
-        entity_label:
-          label: Entidad
-        type:
-          label: 'Tipo de entidad'

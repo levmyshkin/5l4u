@@ -1,22 +1,7 @@
 display:
   default:
-    display_title: Máster
+    display_title: 'Por defecto'
     display_options:
-      exposed_form:
-        options:
-          reset_button_label: Restablecer
-          exposed_sorts_label: 'Ordenar por'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Elementos por página'
-            items_per_page_options_all_label: '- Todo -'
-            offset_label: Desplazamiento
-          tags:
-            previous: ‹‹
-            next: ››
       fields:
         type:
           label: Tipo
@@ -24,6 +9,21 @@ display:
           separator: ', '
         link:
           label: Operaciones
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+      exposed_form:
+        options:
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       filters:
         type:
           expose:

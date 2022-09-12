@@ -1,7 +1,15 @@
 uuid: e5f88278-2185-45d7-8a52-e2afd7c36641
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - filter
+    - language_access
+    - media
+    - search
+    - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
@@ -9,24 +17,9 @@ label: 'Анонимный пользователь'
 weight: 0
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'access language en'
   - 'access language es'
-  - 'access site-wide contact form'
-  - 'add or remove dislike votes on article of node'
-  - 'add or remove dislike votes on book of node'
-  - 'add or remove dislike votes on faq of node'
-  - 'add or remove like votes on article of node'
-  - 'add or remove like votes on book of node'
-  - 'add or remove like votes on faq of node'
-  - 'add or remove vote votes on article of node'
-  - 'add or remove vote votes on book of node'
-  - 'add or remove vote votes on faq of node'
-  - 'display eu cookie compliance popup'
-  - likeit_like
-  - likeit_view
   - 'search content'
   - 'use text format restricted_html'
-  - 'view disqus comments'
   - 'view media'

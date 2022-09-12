@@ -4,20 +4,20 @@ status: true
 dependencies:
   module:
     - node
-id: linkit
 label: linkit
+id: linkit
 description: ''
 matchers:
   a3fc4cdd-fb42-435d-a121-f3f3d152e552:
-    uuid: a3fc4cdd-fb42-435d-a121-f3f3d152e552
     id: 'entity:node'
-    weight: 0
+    uuid: a3fc4cdd-fb42-435d-a121-f3f3d152e552
     settings:
+      metadata: ''
       bundles:
         article: article
         book: book
         page: page
       group_by_bundle: true
-      include_unpublished: false
       substitution_type: canonical
-      metadata: ''
+      include_unpublished: false
+    weight: 0

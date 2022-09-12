@@ -1,7 +1,28 @@
 uuid: 546e6700-290e-4fb9-904a-37a4171ee490
 langcode: ru
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - node.type.article
+    - node.type.page
+    - taxonomy.vocabulary.tags
+  module:
+    - block_content
+    - content_translation
+    - contextual
+    - filter
+    - language_access
+    - menu_link_content
+    - node
+    - path
+    - quickedit
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+    - yoast_seo
 id: editor
 label: Editor
 weight: 3
@@ -16,44 +37,27 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
-  - 'add content to books'
-  - 'administer book outlines'
   - 'administer menu'
   - 'administer nodes'
   - 'administer taxonomy'
   - 'bypass node access'
   - 'change own username'
   - 'create article content'
-  - 'create book content'
   - 'create content translations'
-  - 'create faq content'
   - 'create page content'
-  - 'create terms in drupal_version'
   - 'create terms in tags'
   - 'create url aliases'
-  - 'delete any book content'
-  - 'delete book revisions'
-  - 'delete own book content'
-  - 'edit any book content'
   - 'edit own article content'
-  - 'edit own book content'
-  - 'edit own faq content'
   - 'edit own page content'
-  - 'edit terms in drupal_version'
   - 'edit terms in tags'
   - 'link to any page'
   - 'revert all revisions'
   - 'revert article revisions'
-  - 'revert book revisions'
-  - 'revert faq revisions'
   - 'revert page revisions'
   - 'switch shortcut sets'
   - 'translate any entity'
   - 'translate article node'
   - 'translate block_content'
-  - 'translate book node'
-  - 'translate drupal_version taxonomy_term'
-  - 'translate faq node'
   - 'translate menu_link_content'
   - 'translate page node'
   - 'translate tags taxonomy_term'
@@ -63,9 +67,6 @@ permissions:
   - 'use yoast seo'
   - 'view all revisions'
   - 'view article revisions'
-  - 'view book revisions'
-  - 'view faq revisions'
   - 'view own unpublished content'
   - 'view page revisions'
   - 'view the administration theme'
-  - 'view unpublished paragraphs'

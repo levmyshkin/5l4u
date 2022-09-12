@@ -1,0 +1,9 @@
+uuid: 84109bc8-6757-4794-a734-559bea360a7f
+langcode: en
+status: true
+dependencies: {  }
+id: hy
+label: Armenian
+direction: ltr
+weight: 3
+locked: false

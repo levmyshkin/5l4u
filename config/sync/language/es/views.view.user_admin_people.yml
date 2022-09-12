@@ -1,13 +1,14 @@
 display:
   default:
-    display_title: Máster
+    display_title: 'Por defecto'
     display_options:
-      exposed_form:
-        options:
-          reset_button_label: Restablecer
-          exposed_sorts_label: 'Ordenar por'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+      fields:
+        status:
+          label: Estado
+        operations:
+          label: Operaciones
+        mail:
+          separator: ', '
       pager:
         options:
           tags:
@@ -17,13 +18,12 @@ display:
             items_per_page_label: 'Elementos por página'
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
-      fields:
-        status:
-          label: Estado
-        operations:
-          label: Operaciones
-        mail:
-          separator: ', '
+      exposed_form:
+        options:
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       filters:
         status:
           group_info:
