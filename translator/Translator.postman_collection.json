@@ -10,34 +10,122 @@
 		{
 			"name": "Translator",
 			"request": {
+				"url": "http://92.63.99.195:8000",
+				"method": "POST",
+				"header": [
+					{
+						"key": "translateText",
+						"value": "Hi",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "translateFrom",
+						"value": "en",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "translateTo",
+						"value": "ru",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "translateText",
+							"value": "Hello",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "translateFrom",
+							"value": "en",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "translateTo",
+							"value": "es",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Translator Local",
+			"request": {
 				"url": "http://localhost:8000",
 				"method": "POST",
 				"header": [
 					{
 						"key": "translateText",
 						"value": "Hi",
-						"description": ""
+						"description": "",
+						"disabled": true
 					},
 					{
 						"key": "translateFrom",
 						"value": "en",
-						"description": ""
+						"description": "",
+						"disabled": true
 					},
 					{
 						"key": "translateTo",
-						"value": "ru",
+						"value": "hy",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
 						"description": ""
 					}
 				],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
+					"mode": "urlencoded",
+					"urlencoded": [
 						{
-							"key": "string",
-							"value": "Test sadfsad \"asfas\" <a href=\"#\">asdf</a> ",
+							"key": "translateText",
+							"value": "Hello",
 							"description": "",
-							"type": "text",
-							"disabled": true
+							"type": "text"
+						},
+						{
+							"key": "translateFrom",
+							"value": "en",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "translateTo",
+							"value": "hy",
+							"description": "",
+							"type": "text"
 						}
 					]
 				},
