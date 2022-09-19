@@ -1,0 +1,19 @@
+{
+  "name": "fairy_tale",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levmyshkin/5l4u.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levmyshkin/5l4u/issues"
+  },
+  "homepage": "https://github.com/levmyshkin/5l4u#readme"
+}
