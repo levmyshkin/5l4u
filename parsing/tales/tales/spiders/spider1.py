@@ -1,13 +1,19 @@
+from site import abs_paths
 import scrapy
+import logging
 from scrapy.spiders import SitemapSpider
 import logging
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
+from urllib.parse import urljoin
+
+
 class Spider1Spider(scrapy.Spider):
     name = 'spider1'
     start_urls = ['https://nukadeti.ru/sitemap.xml']
 #     start_urls = ['https://nukadeti.ru/skazki/khodzha-bu-ali']
-    page_count = 12
+
+    # rules = [Rule(LinkExtractor(allow = "skazki/", deny = ("raskraski/", "multiki/","chitatelskij-dnevnik/", "kratkoe-soderzhanie/","tests/",)), follow = True)]
 
     def parse(self, response):
         response.selector.register_namespace('d', 'http://www.sitemaps.org/schemas/sitemap/0.9')
@@ -18,8 +24,6 @@ class Spider1Spider(scrapy.Spider):
         tags = response.css('.tale-cats a::text').extract()
         tagsString = ','.join(tags)
 
-        if response.request.url.find('/skazki'):
-            pass
 
         if response.css('.cont').extract_first('').strip() == '':
             teaser = response.css('.tale-text p').extract_first('').strip()
@@ -34,11 +38,11 @@ class Spider1Spider(scrapy.Spider):
         item = {
           'title': response.css('h1::text').extract_first('').strip(),
           'url': response.request.url,
-          'body': response.css('.tale-text').extract_first('').replace("\r", "").replace("\n", "").replace("\xad", "").strip(),
-          'teaser': teaser,
+          'body': response.css('.tale-text').extract_first('').replace("\r", "").replace("\n", "").replace("\xad", "").replace('/content/images', 'https://nukadeti.ru/content/images').strip(),
+           'teaser': teaser,
           'image': image,
           'tags': tagsString
         }
-
         if len(tags) != 0:
-            yield item
+            if response.request.url.find('/skazki'):
+                yield item

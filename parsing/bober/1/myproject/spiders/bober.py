@@ -25,7 +25,7 @@ class BoberSpider(scrapy.Spider):
             pass 
             
         tags = response.css('.detailInfo__buttonBlock a::text').extract()
-        tagsString = ','.join(tags);
+        tagsString = ','.join(tags)
         item = {
           'title': response.css('h1::text').extract_first('').strip(),
           'url': response.request.url,
