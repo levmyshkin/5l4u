@@ -9,6 +9,7 @@
 /html
 /content
 
+
 # Ignore sensitive information
 /web/sites/*/settings.php
 /web/sites/*/settings.local.php
@@ -39,3 +40,4 @@ node_modules
 /.editorconfig
 /.gitattributes
 *.css.map
+*.pyc
